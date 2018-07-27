@@ -1,0 +1,27 @@
+baseURL = "http://example.org/"
+languageCode = "en-us"
+title = "My New Hugo Site"
+
+canonifyURLs = true
+enableEmoji = true
+googleAnalytics = "UA-XXXXXX-1"
+
+theme = "pristine"
+
+[params]
+    portrait = "img/portrait.jpg"
+
+
+
+[[params.social]]
+    title = "Email"
+    url = "mailto:john@doe.com"
+[[params.social]]
+    title = "Follow @johndoe"
+    url = "https://twitter.com/johndoe"
+[[params.social]]
+    title = "Github"
+    url = "https://github.com/johndoe"
+[[params.social]]
+    title = "Facebook"
+    url = "https://facebook.com/johndoe"
