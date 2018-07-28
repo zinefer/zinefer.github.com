@@ -6,7 +6,7 @@ canonifyURLs = true
 enableEmoji = true
 googleAnalytics = "UA-XXXXXX-1"
 
-theme = "pristine"
+theme = ["darken-pristine", "pristine"]
 
 [params]
     portrait = "img/portrait.jpg"
