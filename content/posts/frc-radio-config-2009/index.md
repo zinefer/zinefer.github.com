@@ -1,7 +1,6 @@
 +++
 date = "2009-03-01T00:00:00-04:00"
 title = "FRC Radio Config 2009"
-draft = true
 
 +++
 
