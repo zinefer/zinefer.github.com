@@ -1,15 +1,16 @@
 baseURL = "http://example.org/"
 languageCode = "en-us"
-title = "My New Hugo Site"
+title = "James Kiefer"
 
 canonifyURLs = true
 enableEmoji = true
 googleAnalytics = "UA-XXXXXX-1"
 
-theme = ["darken-pristine", "pristine"]
+theme = "carbon"
 
 [params]
     portrait = "img/portrait.jpg"
+    description = "Release Engineer, Software Developer, Maker and Drone Pilot"
 
 
 
