@@ -1,7 +1,8 @@
 +++
 date = "2009-03-05T00:00:00-04:00"
 title = "FRC Radio Config 2009"
-tags = ["software","First Robotics","C#"]
+tags = ["FRC","C#","Automation"]
+categories = "Software"
 +++
 
 {{< imgproc "radioconfig_screenb.jpg" Resize "375x" "floatright" />}}
