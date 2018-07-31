@@ -4,8 +4,8 @@ title = "FRC Radio Config 2010"
 
 +++
 
-![Radio config screenshot](radio10_screena.jpg)
-![Radio config screenshot](radio10_screenb.jpg)
+{{< imgproc "radio10_screena.jpg" Resize "350x" />}}
+{{< imgproc "radio10_screenb.jpg" Resize "350x" />}}
 
 # Set-up
 - Get the excel file output by FMS that contains ALL teams and their WPA keys
