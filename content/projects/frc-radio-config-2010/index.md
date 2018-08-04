@@ -5,8 +5,8 @@ categories = "Software"
 tags = ["FRC", "C#", "Automation"]
 +++
 
-{{< imgproc "radio10_screena.jpg" Resize "350x" />}}
-{{< imgproc "radio10_screenb.jpg" Resize "350x" />}}
+{{< image "radio10_screena.jpg" Resize "350x" />}}
+{{< image "radio10_screenb.jpg" Resize "350x" />}}
 
 # Set-up
 - Get the excel file output by FMS that contains ALL teams and their WPA keys

@@ -5,7 +5,7 @@ tags = ["FRC","C#","Automation"]
 categories = "Software"
 +++
 
-{{< imgproc "radioconfig_screenb.jpg" Resize "375x" "floatright" />}}
+{{< image "radioconfig_screenb.jpg" Resize "375x" "floatright" />}}
 I have been the WPA Key (person?) at four 2009 District Regional Competitions. Giving out WPA keys to teams isn't a very good idea, considering if a team lost theirs, and a malicious person got hold of it, they could connect to the fields wireless system, and perhaps disable a robot by deleting its internal program.
 
 After realizing this we decided not to pass out anymore WPA sheets and have them come to a "WPA Station" where we would configure their radio for them. Needless to say, this was pretty time consuming. Sometime during the third event I started to write a script to configure the radios with just the input of the team number and WPA key. It wasnt very friendly, but worked great.
