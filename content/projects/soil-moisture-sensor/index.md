@@ -4,4 +4,7 @@ title = "Soil Moisture Sensor"
 tags = ["Electronics","Soldering","Gardening","Arduino"]
 categories = "Hardware"
 +++
+
 This little thing measures the resistance of soil to estimate it’s wetness and displays it via a 5 led bar graph. It houses an Arduino pro mini and a lipo battery.
+
+{{< gallery build >}}
