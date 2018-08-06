@@ -27,6 +27,15 @@ tags = ["Paintball", "Camping"]
 There was a cease fire because bees got under a some masks and they took them off.
 
 <center>
+  {{< image "IMG00346.jpg" Resize "325x" />}}
+  {{< image "IMG00347.jpg" Resize "325x" />}}
+</center>
+
+<center>
+  {{< image "IMG00348.jpg" Resize "700x" >}}Double barrel{{</image>}}
+</center>
+
+<center>
   {{< image "IMG00356.jpg" Resize "325x" />}}
   {{< image "IMG00357.jpg" Resize "325x" />}}
 </center>
