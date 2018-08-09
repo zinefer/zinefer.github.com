@@ -3,7 +3,7 @@ date = "2015-06-08T16:29:00-04:00"
 title = "Designing a Raspberry Pi Arcade Cabinet"
 description = "MAME Cabinet Design"
 categories = "Modeling"
-tags = ["CAD", "Arcade", "Solidworks", "MAME"]
+tags = ["CAD", "Arcade", "Solidworks", "MAME", "Retro"]
 +++
 
 A few years ago I moved to Colorado to work at SparkFun and postponed a project I had been working on: Building a full size MAME arcade cabinet. A couple of months ago I decided I was going to pick the project back up and plan it so that I could work on it with my dad during my 4th of July vacation. I wanted to use his motorcycle as design inspiration for the cabinet.

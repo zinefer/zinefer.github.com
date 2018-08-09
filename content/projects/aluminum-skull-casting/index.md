@@ -13,8 +13,8 @@ Initially I was going to try to carve my own skull from wax or foam. After some 
 I remembered seeing a silicone mold making kit at my local hobbystore and I thought that if I could create the silicone mold I would be able to make wax copies easily and quickly for the metal molds. I decided on a ABS print so that I could try giving it an acetone bath.
 
 <center>
-	{{< image "11.jpg" Fit "375x281" />}}
-	{{< image "21.jpg" Resize "375x" />}}
+  {{< image "11.jpg" Fit "375x281" />}}
+  {{< image "21.jpg" Resize "375x" />}}
 </center>
 
 Sorry for the poor photos, documentation is never my first priority. The acetone bath was easy but required a little bit of experimentation. I tried putting the acetone into a spray bottle and selectively spraying the model but that didn’t seem to do much. In the end I think I just gave it a few quick dunks in a small cup.
@@ -33,8 +33,8 @@ The positive kept failing because the skull would lift off the clay supports and
 While pouring the silicone I did what is called a high pour. It causes the silicone to stretch out and release any air bubbles that were trapped inside during mixing. You also need to make sure to pour the silicone into the lowest point of the mold and let it fill in the cavities of your positive.
 
 <center>
-	{{< image "first_wax1.jpg" Resize "x280" />}}
-	{{< image "wax_copies1.jpg" Resize "375x" />}}
+  {{< image "first_wax1.jpg" Resize "x280" />}}
+  {{< image "wax_copies1.jpg" Resize "375x" />}}
 </center>
 
 Once I had the wax copies I started on creating a forge to melt the aluminum. I followed a really fantastic tutorial by The King of Random on youtube.
@@ -42,9 +42,9 @@ Once I had the wax copies I started on creating a forge to melt the aluminum. I 
 {{< youtube hHD10DjxM1g >}}
 
 <center>
-	{{< image "forge1.jpg" Resize "375x" />}}
-	{{< image "litforge21.jpg" Resize "x282" />}}
-	{{< image "litforge_11.jpg" Resize "x282" />}}
+  {{< image "forge1.jpg" Resize "375x" />}}
+  {{< image "litforge21.jpg" Resize "x282" />}}
+  {{< image "litforge_11.jpg" Resize "x282" />}}
 </center>
 
 The hardest part about the forge was figuring out the airflow. I tried an air compressor but it seemed like it was too much air and usually made a big mess. The shopvac worked but was quite loud. I found that the blower from a 3$ hair dryer at goodwill worked great.
@@ -78,14 +78,14 @@ Unfortunately, I shocked the molten aluminum by adding a bit too much to the for
 <br style="clear:both"/>
 
 <center>
-	{{< image "main21.jpg" Resize "423x" />}}
-	{{< image "main11.jpg" Resize "x282" />}}
+  {{< image "main21.jpg" Resize "423x" />}}
+  {{< image "main11.jpg" Resize "x282" />}}
 </center>
 
 <center>
-	{{< image "finalmetalpositive1.jpg" Resize "350x" />}}
-	{{< image "finalmoldbox1.jpg" Resize "350x" />}}
-	{{< image "finalpour1.jpg" Resize "x262" />}}
+  {{< image "finalmetalpositive1.jpg" Resize "350x" />}}
+  {{< image "finalmoldbox1.jpg" Resize "350x" />}}
+  {{< image "finalpour1.jpg" Resize "x262" />}}
 </center>
 
 This mold had a bigger sprue and I made the mold significantly larger than any of the previous ones. I used a cheap unscented dinner candle to drip wax to use as a glue.

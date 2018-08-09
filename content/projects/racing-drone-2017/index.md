@@ -1,7 +1,7 @@
 +++
 date = "2017-03-10T09:34:00-04:00"
 title = "Martian II Racing Drone"
-description = "A photolog on my 2017 racing drone build"
+description = "A photolog of my 2017 racing drone build"
 categories = "Droning"
 tags = ["Drones", "Electronics", "Soldering", "MartainII"]
 +++
