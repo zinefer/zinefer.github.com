@@ -1,6 +1,7 @@
 +++
 date = "2010-02-01T00:00:00-04:00"
 title = "FRC Radio Config 2010"
+description = "An update to my radio configurator for FIRST Robotics Competitions"
 categories = "Software"
 tags = ["FRC", "C#", "Automation"]
 +++

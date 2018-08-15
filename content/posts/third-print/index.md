@@ -1,6 +1,7 @@
 +++
 date = "2012-04-29T16:37:00-04:00"
 title = "Third Print on the Prusa"
+description = "Very impressive quality"
 categories = "Making"
 tags = ["3D Printing", "Minecraft"]
 +++

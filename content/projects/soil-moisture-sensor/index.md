@@ -1,6 +1,7 @@
 +++
 date = "2014-02-24T04:35:00-04:00"
 title = "Soil Moisture Sensor"
+description = "A very simple resistance sensor"
 tags = ["Electronics","Soldering","Gardening","Arduino"]
 categories = "Hardware"
 +++
