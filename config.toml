@@ -1,10 +1,10 @@
-baseURL = "http://example.org/"
+baseURL = "//jameskiefer.com/"
 languageCode = "en-us"
 title = "James Kiefer"
 
 canonifyURLs = true
 enableEmoji = true
-googleAnalytics = "UA-XXXXXX-1"
+googleAnalytics = "UA-124058172-1"
 
 theme = "carbon"
 
