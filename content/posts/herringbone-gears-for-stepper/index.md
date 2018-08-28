@@ -3,7 +3,7 @@ date = "2018-08-26T23:51:45-06:00"
 title = "Herringbone Gears for Stepper Motor"
 description = "Using some OpenScad scripts to prototype for an upcoming project"
 categories = "Modeling"
-tags = ["OpenScad", "3D Printing"]
+tags = ["OpenScad", "3D Printing", "Desk Lift"]
 +++
 
 I want to try to automate my standing desk so that getting it into the exact position when standing is easier.
@@ -29,7 +29,6 @@ distance_between_axels = 35;
 gear_h = 10;
 gear_shaft_h = 7  ;
 
-
 // GEAR1 (SMALLER GEAR, STEPPER GEAR) OPTIONS:
 // It's helpful to choose prime numbers for the gear teeth.
 gear1_teeth = 13;
@@ -43,7 +42,6 @@ gear1_setscrew_r          = gear1_setscrew_d/2;
 gear1_captive_nut_d = 6.2;
 gear1_captive_nut_r  = gear1_captive_nut_d/2;
 gear1_captive_nut_h = 3;
-
 
 // GEAR2 (LARGER GEAR, DRIVE SHAFT GEAR) OPTIONS:
 gear2_teeth = 31;

@@ -3,7 +3,7 @@ date = "2014-11-04T12:17:00-05:00"
 title = "Sparkfun Holiday Games"
 description = "Javascript ports of old retro titles"
 categories = "Software"
-tags = ["Javscript", "Gaming", "Retro", ]
+tags = ["Javascript", "Gaming", "Retro" ]
 +++
 
 {{< image "spookfest.png" "" "" "floatright" />}}
