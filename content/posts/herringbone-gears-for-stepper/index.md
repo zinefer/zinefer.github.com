@@ -23,7 +23,7 @@ My desk is a [MultiTable](https://www.multitable.com/product/multitable-manual-m
 
 I'm using the [parametric herringbone](https://www.thingiverse.com/thing:6544/files) script for now. Here's the settings from my first attempt:
 
-<code>
+```
 // OPTIONS COMMON TO BOTH GEARS:
 distance_between_axels = 35;
 gear_h = 10;
@@ -61,7 +61,7 @@ bridge_helper_h=-1;
 
 gear2_rim_margin = 2;
 gear2_cut_circles  = 5;
-</code>
+```
 
 This should give me a ratio of about 2.38.
 
