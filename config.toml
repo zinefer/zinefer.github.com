@@ -2,6 +2,7 @@ baseURL = "//jameskiefer.com/"
 languageCode = "en-us"
 title = "James Kiefer"
 
+enableRobotsTXT = true
 canonifyURLs = true
 enableEmoji = true
 googleAnalytics = "UA-124058172-1"
@@ -9,20 +10,8 @@ googleAnalytics = "UA-124058172-1"
 theme = "carbon"
 
 [params]
-    portrait = "img/portrait.jpg"
-    description = "Release Engineer, Software Developer, Maker and Drone Pilot"
-
-
-
-[[params.social]]
-    title = "Email"
-    url = "mailto:john@doe.com"
-[[params.social]]
-    title = "Follow @johndoe"
-    url = "https://twitter.com/johndoe"
-[[params.social]]
-    title = "Github"
-    url = "https://github.com/johndoe"
-[[params.social]]
-    title = "Facebook"
-    url = "https://facebook.com/johndoe"
+  author = ["James Kiefer"]
+  publisher = "James Kiefer"
+  publisherLogo = "http://jameskiefer.com/logo.png"
+  portrait = "img/portrait.jpg"
+  description = "Release Engineer, Software Developer, Maker and Drone Pilot"
