@@ -1,4 +1,4 @@
-baseURL = "//jameskiefer.com/"
+baseURL = "http://jameskiefer.com/"
 languageCode = "en-us"
 title = "James Kiefer"
 
@@ -10,7 +10,7 @@ googleAnalytics = "UA-124058172-1"
 theme = "carbon"
 
 [params]
-  author = ["James Kiefer"]
+  author = "James Kiefer"
   publisher = "James Kiefer"
   publisherLogo = "http://jameskiefer.com/logo.png"
   portrait = "img/portrait.jpg"
