@@ -1,7 +1,7 @@
 +++
 date = "2018-09-09T18:49:08-06:00"
 title = "To chop a connector or reverse engineer it's mate"
-description = "Making a connector for the motor power in the desk lift"
+description = "Making a connector for the motor power for the desk lift project"
 categories = "Making"
 tags = ["3D Printing", "Electronics", "Soldering", "Desk Lift", "Fusion 360"]
 +++
