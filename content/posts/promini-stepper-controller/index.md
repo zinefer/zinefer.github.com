@@ -21,7 +21,7 @@ I was running things off two separated power rails here and forgot about it afte
   {{< mosaic "3x1" "20180914_200423.jpg" "20180914_200646.jpg" "20180914_202928.jpg" "20180914_172345.jpg" >}}
 </center>
 
-For power I have 29V DC so I need something that can step that down. I found two buck modules that I found interesting. One based on the [LM2596](http://www.oddwires.com/lm2596-dc-dc-buck-converter-module-power-supply-output-fixed-5v/) and one on [MP1584](https://www.amazon.com/gp/product/B077TC3812/). I went with the MP1584 even though the listed maximum input voltage is 28V. I looked at the datasheet for the MP1584 and found that it lists an absolute maximum input voltage of 30 and I am not going to need anywhere near 3A to power a promini and the logic rails of the A4988.
+For power I have 29V DC so I need something that can step that down. I found two buck modules that I found interesting. One based on the [LM2596](http://www.oddwires.com/lm2596-dc-dc-buck-converter-module-power-supply-output-fixed-5v/) and one on [MP1584](https://www.amazon.com/gp/product/B077TC3812/). I went with the MP1584 even though the listed maximum input voltage is 28V. I looked at the [datasheet](MP1584_r1.0.pdf) for the MP1584 and found that it lists an absolute maximum input voltage of 30 and I am not going to need anywhere near 3A to power a promini and the logic rails of the A4988.
 
 <center>
   {{< image "20180920_163738.jpg" "Fill" "325x245" />}}
@@ -35,6 +35,10 @@ During this project I wanted to try out some new techniques. I haven't done a ci
 <center>
   {{< mosaic "1x3" "20180921_113953.jpg" "20180920_173831.jpg" "20180921_105049.jpg" "20180921_105903.jpg" >}}
 </center>
+
+## Power states
+
+Figuring out how to control the power state of the A4988 wasn't as straight forward as it could have been. The information in the [datasheet](A4988.pdf) is a bit spread out. I suggest setting Reset `HIGH` and leaving Enable floating. Then control the Sleep pin using a `10k` pulldown resistor which is what I've done here.
 
 # Main Build
 
@@ -56,6 +60,8 @@ I normally build my circuit prototypes by bridging traces on a proto-pcb. For th
   {{< image "20180921_141239.jpg" "Fill" "325x245" />}}
   {{< image "thumb.jpg" "Resize" "325x" />}}
 </center>
+
+# Illuminated Automotive Switch
 
 As a bonus, I took apart the switch I am considering using. I found that if you swap the output/power terminals on your standard automotive illuminated switch the led will be on regardless of the switch position, which is actually what I was looking for with this project.
 
