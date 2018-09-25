@@ -3,7 +3,7 @@ date = "2018-09-23T20:47:22-06:00"
 title = "Promini Stepper Controller"
 description = "Working on a single motor stepper controller using an Arduino Promini and a A4988 for my desk lift project"
 categories = "Hardware"
-tags = ["Electronics", "Robotics", "Arduino", "Soldering", "Prototyping"]
+tags = ["Electronics", "Robotics", "Arduino", "Soldering", "Prototyping", "Desk Lift"]
 +++
 
 # Prototyping
