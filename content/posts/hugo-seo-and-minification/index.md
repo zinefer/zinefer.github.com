@@ -12,7 +12,7 @@ In early August Hugo released version `0.47` which added a handy `--minify` cli 
 
 I solved this problem by reworking the seo partial to create a `Map` and output it as `json`.
 
-```
+```go-html-template
 {{- $title := .Site.Title }}
 {{- if not .IsHome }}
   {{- $title = .Title }}

@@ -2,6 +2,7 @@ baseURL = "http://jameskiefer.com/"
 languageCode = "en-us"
 title = "James Kiefer"
 
+pygmentsCodeFences = true
 enableRobotsTXT = true
 canonifyURLs = true
 enableEmoji = true

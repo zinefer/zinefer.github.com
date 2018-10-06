@@ -44,7 +44,7 @@ After a lot of headbanging (This was my first venture into GoHTML) here's what I
 
 Here's the GoHTML template:
 
-```
+```go-html-template
 {{ $paginator := .Paginator }}
 
 {{ $adjacent_links := 1 }}
