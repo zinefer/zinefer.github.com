@@ -3,7 +3,7 @@ date = "2018-10-06T10:19:08-06:00"
 title = "Gradual engagement with Rails 5 & Devise 4"
 description = "How to create an email only registration flow for rails and devise"
 categories = "Software"
-tags = ["Rails", "Devise", "Gradual Engagement"]
+tags = ["Ruby", Rails", "Devise", "Gradual Engagement"]
 +++
 
 This is going to be a quick overview on how to alter devise to allow for email only registration flow. You should be able to adapt this process to accomodate most gradual engagement setups.
