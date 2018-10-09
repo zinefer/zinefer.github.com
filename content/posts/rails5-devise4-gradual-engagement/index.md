@@ -3,7 +3,7 @@ date = "2018-10-06T10:19:08-06:00"
 title = "Gradual engagement with Rails 5 & Devise 4"
 description = "How to create an email only registration flow for rails and devise"
 categories = "Software"
-tags = ["Ruby", Rails", "Devise", "Gradual Engagement"]
+tags = ["Ruby", "Rails", "Devise", "Gradual Engagement"]
 +++
 
 This is going to be a quick overview on how to alter devise to allow for email only registration flow. You should be able to adapt this process to accomodate most gradual engagement setups.
@@ -35,7 +35,7 @@ end
 
 Remove the password fields from `app/views/devise/registrations/new.html.erb`, here is what mine looked like:
 
-```erb
+```html+erb
 <div class="field">
   <%= f.label :password %>
   <% if @minimum_password_length %>
@@ -87,7 +87,7 @@ end
 ```
 
 Create `dsr/app/views/devise/confirmations/show.html.erb`:
-```erb
+```html+erb
 <h2>You're almost done! Now create a password to securely access your account.</h2>
 <%= form_for(resource, as: resource_name, url: confirm_path, html: { method: :patch }) do |f| %>
   <%= devise_error_messages! %>
