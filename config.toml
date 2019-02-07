@@ -1,4 +1,4 @@
-baseURL = "http://jameskiefer.com/"
+baseURL = "https://jameskiefer.com/"
 languageCode = "en-us"
 title = "James Kiefer"
 
@@ -9,6 +9,7 @@ enableEmoji = true
 googleAnalytics = "UA-124058172-1"
 
 theme = "carbon"
+timeout = 30000
 
 [params]
   author = "James Kiefer"
@@ -16,3 +17,9 @@ theme = "carbon"
   publisherLogo = "http://jameskiefer.com/logo.png"
   portrait = "img/portrait.jpg"
   description = "Release Engineer, Software Developer, Maker and Drone Pilot"
+
+[params.staticman]
+  username = "zinefer"
+  repository = "zinefer.github.com"
+  branch = "master"
+  notifications = false
