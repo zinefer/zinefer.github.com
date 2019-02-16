@@ -1,18 +1,6 @@
 /* Fancy HR */
 
-.hr-accent {
-  overflow: visible;
-  padding: 0;
-  border: none;
-  border-top: medium double;
-  text-align: center;
-  margin-top: 2em;
-  height: 0;
-  margin-bottom: 2em;
-}
-
-.hr-accent:after {
-  content: "§";
+.hr-accent:before {
   content: url('/img/logo.svg');
   display: inline-block;
   position: relative;
@@ -21,6 +9,28 @@
   padding: 0 0.25em;
   background: $dark-background;
   width: 30px;
+}
+
+.hr-accent {
+  overflow: visible;
+  padding: 0;
+  border: none;
+  border-top: thin solid;
+  text-align: center;
+  margin-top: 2em;
+  height: 0;
+  margin-bottom: 2em;
+}
+
+.hr-accent:after {
+  content: "";
+  border-top: thin solid;
+  display: block;
+  position: relative;
+  top: -2.25em;
+  z-index: -1;
+  width: 90%;
+  margin: auto;
 }
 
 
