@@ -51,7 +51,7 @@ Add a `build` and `start` script to your `package.json`
 }
 {{< / highlight >}}
 
-Create `webpack-config.js`
+Create `webpack-config.js`:
 
 ```javascript
 const path = require('path');
@@ -90,7 +90,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
-      title: 'EntropyTD Development'
+      title: 'Pixi.js Demo'
     }),
     new CopyPlugin([
       { from: 'src/assets', to: 'assets' },
@@ -109,7 +109,7 @@ module.exports = {
 npm install pixi.js --save
 ```
 
-Now all we need to doo is import PIXI and we're good to go.
+Now all we need to do is import and we're good to go.
 ```javascript
 import * as PIXI from 'pixi.js';
 ```
@@ -118,7 +118,7 @@ import * as PIXI from 'pixi.js';
 
 Save [bunny.png](bunny.png) to `src/assets/bunny.png`.
 
-Create `src/index.js`
+Create `src/index.js`:
 ```javascript
 import * as PIXI from 'pixi.js';
 
