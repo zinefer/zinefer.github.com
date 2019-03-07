@@ -3,6 +3,7 @@ languageCode = "en-us"
 title = "James Kiefer"
 
 pygmentsCodeFences = true
+pygmentsUseClasses = true
 enableRobotsTXT = true
 canonifyURLs = true
 enableEmoji = true
