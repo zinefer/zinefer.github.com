@@ -90,7 +90,7 @@ Unfortunately, I shocked the molten aluminum by adding a bit too much to the for
 
 This mold had a bigger sprue and I made the mold significantly larger than any of the previous ones. I used a cheap unscented dinner candle to drip wax to use as a glue.
 
-After filling the mold with plaster I set it on a diy vibrating table>. After evacuating the wax I left the mold in the oven and turned it up to ~450F. I did this to try to keep the aluminum molten for a longer amount of time inside the mold. I sure wish I had a kiln! 😉
+After filling the mold with plaster I set it on a diy vibrating table. After evacuating the wax I left the mold in the oven and turned it up to ~450F. I did this to try to keep the aluminum molten for a longer amount of time inside the mold. I sure wish I had a kiln! 😉
 
 I made a mistake when pouring: I decided I wanted to puncture the foil above the riser so that I could see if the mold was full easier and a big chunk of sand fell right into the unprotected area. You can see that sand in the teeth area of my final casting.
 
