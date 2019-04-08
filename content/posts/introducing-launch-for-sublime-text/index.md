@@ -1,6 +1,6 @@
 +++
 date = "2019-03-26T22:58:38-06:00"
-title = "Launch for Sublime Text"
+title = "Introducing Launch for Sublime Text"
 description = "I created a plugin for Sublime that launches applications from the command palette"
 categories = "Software"
 tags = ["Python", "Sublime Text"]
