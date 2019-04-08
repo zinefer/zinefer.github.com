@@ -1,6 +1,6 @@
 +++
 date = "2019-04-07T19:40:47-06:00"
-title = "Install Amazon Cloudwatch Agent with Chef"
+title = "Install AWS Cloudwatch Agent with Chef"
 description = "Quick-guide to install the AWS Cloudwatch Agent"
 categories = "Software"
 tags = ["AWS", "Cloudwatch", "Chef", "System Administration", "Ruby"]
@@ -10,10 +10,10 @@ This guide will give a quick outline on how to create a Chef recipe to install t
 
 # Steps
 
-- Add aws_cookbook dependancy
-- Create credentials databag
-- Create Cloudwatch config
-- Create recipe to tie it all together
+- [Add aws_cookbook dependancy](#add-aws-cookbook-dependancy)
+- [Create credentials databag](#create-credentials-databag)
+- [Create Cloudwatch config](#create-cloudwatch-config)
+- [Create recipe to tie it all together](#create-recipe-to-tie-it-all-together)
 
 # Add `aws_cookbook` dependancy
 
