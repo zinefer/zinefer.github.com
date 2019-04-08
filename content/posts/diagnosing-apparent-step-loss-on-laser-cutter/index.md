@@ -34,7 +34,7 @@ At this point I was starting to lose confidence that my issue was actually step-
   <img src="backlash.svg" width="600"/>
 </center>
 
-[Backlash](https://en.wikipedia.org/wiki/Backlash_(engineering)) is the space between the teeth of engaged gears. Every geared system has some amount of backlash and since my laser does not have [encoders](https://en.wikipedia.org/wiki/Encoder) like some of the more expensive machines so there is no feedback after a move command. Because of this, each time either axis motor of my laser reverses direction there is a small amount of backlash error that gets added to the position of the laser head. With a complicated enough path, over time the error will accumulate and every relative move will slowly drift off position.
+[Backlash](https://en.wikipedia.org/wiki/Backlash_(engineering)) is the space between the teeth of engaged gears. Every geared system has some amount of backlash and since my laser does not have [encoders](https://en.wikipedia.org/wiki/Encoder) like some of the more expensive machines so there is no feedback after a move command. Because of this, each time either axis motor reverses direction there is a small amount of backlash error that gets added to the position of the laser head. With a complicated enough path, over time the error will accumulate and every relative move will slowly drift off position.
 
 # A solution
 
