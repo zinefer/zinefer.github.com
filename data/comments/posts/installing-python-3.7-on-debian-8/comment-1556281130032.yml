@@ -1,0 +1,8 @@
+_id: 729309d0-681d-11e9-9a7c-cb22f36a6d44
+_parent: installing-python-3.7-on-debian-8
+reply_to: ''
+botpot: ''
+name: David
+email: 7e872eb18f0d66166ad944eaa9d2362a
+body: "I'm trying to build Python 3.7.3 on a Raspberry Pi. I followed your instructions, but still get the following errors:\r\n\r\n```\r\n*** WARNING: renaming \"_ssl\" since importing it failed: build/lib.linux-armv7l-3.7/_ssl.cpython-37m-arm-linux-gnueabihf.so: undefined symbol: X509_VERIFY_PARAM_set_hostflags\r\n\r\nPython build finished successfully!\r\nThe necessary bits to build these optional modules were not found:\r\n_uuid\r\nTo find the necessary bits, look in setup.py in detect_modules() for the module's name.\r\n\r\n\r\nThe following modules found by detect_modules() in setup.py, have been\r\nbuilt by the Makefile instead, as configured by the Setup files:\r\n_abc                  atexit                pwd\r\ntime\r\n\r\n\r\nFollowing modules built successfully but were removed because they could not be imported:\r\n_ssl\r\n\r\n\r\nCould not build the ssl module!\r\nPython requires an OpenSSL 1.0.2 or 1.1 compatible libssl with X509_VERIFY_PARAM_set1_host().\r\nLibreSSL 2.6.4 and earlier do not provide the necessary APIs, https://github.com/libressl-portable/portable/issues/381\r\n```"
+date: '2019-04-26T12:18:50.030Z'
