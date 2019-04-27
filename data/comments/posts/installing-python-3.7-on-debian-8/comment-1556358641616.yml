@@ -1,0 +1,8 @@
+_id: eb14c010-68d1-11e9-a4c1-2f83603fa3db
+_parent: installing-python-3.7-on-debian-8
+reply_to: 729309d0-681d-11e9-9a7c-cb22f36a6d44
+botpot: ''
+name: David
+email: 7e872eb18f0d66166ad944eaa9d2362a
+body: "I'm not sure if this is of any interest, but the original openssl package is still installed on the Pi. It's version 1.0.1. \r\n\r\n```\r\n$ /usr/bin/openssl version\r\nOpenSSL 1.0.1t  3 May 2016\r\n$ /usr/local/bin/openssl version\r\nOpenSSL 1.0.2o  27 Mar 2018\r\n```\r\n\r\nI'd like to get rid of the old one and replace it with the new, but the old one is installed / managed by apt-get. Is it safe to just copy my built one on top of it? But then, how do I know what needs copying?"
+date: '2019-04-27T09:50:41.610Z'
