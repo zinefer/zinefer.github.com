@@ -4,5 +4,5 @@ reply_to: 729309d0-681d-11e9-9a7c-cb22f36a6d44
 botpot: ''
 name: James Kiefer
 email: e8446e6559d00c44a63238ccc6317bd0
-body: "Yeah, I think that is the problem. The first time I read through your command log I found a line warning about `/usr/local` but this morning I can't seem to find it again. Try changing the configure command to point at `/usr/bin` and see if we get any improvement:\r\n\r\n`./config shared --prefix=/usr/bin/`"
+body: "Yeah, I think that is the problem. The first time I read through your command log I found a line warning about `/usr/local` but this morning I can't seem to find it again. Try changing the configure command to point at `/usr` and see if we get any improvement:\r\n\r\n`./config shared --prefix=/usr`"
 date: '2019-04-27T13:09:38.057Z'
