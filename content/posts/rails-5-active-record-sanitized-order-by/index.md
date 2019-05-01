@@ -14,13 +14,15 @@ DEPRECATION WARNING: Dangerous query method (method whose arguments are used as 
 
 I don't like users to be able to cause sql errors even with the worst input. I like clean logs. I went looking for someone who has solved this problem but didn't find much. There was a decent [sanitation function](https://gist.github.com/TheKidCoder/9653073) in a gist on github but it doesn't work with joins. Here is a version of that function that operates cleanly when used on a joined query.
 
+Add this file to `config/initializers/sanitized_order.rb`:
+
 ```rb
 # Refactored from https://gist.github.com/TheKidCoder/9653073
 class ActiveRecord::Relation
   def sanitized_order(order_by, direction = 'ASC')
     if order_by.include?('.')
       klass, column = order_by.split('.')
-      unless joins_values.include?(klass.pluralize.to_sym)
+      unless ([model_name.plural.to_sym] + joins_values).include?(klass.pluralize.to_sym)
         raise "#{klass} unavailable in query"
       end
       klass = klass.singularize.classify.constantize
@@ -36,3 +38,11 @@ class ActiveRecord::Relation
   end
 end
 ```
+
+Use it like this and feel free to pass in user supplied data:
+
+```rb
+Users.joins(:posts).sanitized_order('posts.id', 'DESC')
+```
+
+Beware though, a malicious user could use this to order by any column available in the model so you may need to add more protections to this depending on your use case.
