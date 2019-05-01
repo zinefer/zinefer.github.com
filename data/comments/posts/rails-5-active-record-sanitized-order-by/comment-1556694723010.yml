@@ -1,0 +1,8 @@
+_id: 6b3b1030-6be0-11e9-8b97-1fb782556955
+_parent: rails-5-active-record-sanitized-order-by
+reply_to: ''
+botpot: ''
+name: mcfoton
+email: 0dbeabe0ff71a15a159c95a78d0326bd
+body: "Hi James, thanks for sharing :)\r\nOne question though — what if I have the model name stated in the order clause directly, is there a way to check no only `joins_values`, but kind-of `from-values`? Couldn't find a method for that :(\r\n```\r\n scope :ordered_by_city, ->(order) {sanitized_order(\"addresses.city\", order)}\r\n\r\nAddress.ordered_by_city('ASC')\r\n->> RuntimeError (addresses unavailable in query)\r\n```"
+date: '2019-05-01T07:12:03.009Z'
