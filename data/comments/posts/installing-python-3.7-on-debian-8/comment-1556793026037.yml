@@ -1,0 +1,10 @@
+_id: 4b6db970-6cc5-11e9-9d55-ab29ec3c450c
+_parent: installing-python-3.7-on-debian-8
+reply_to: 729309d0-681d-11e9-9a7c-cb22f36a6d44
+botpot: ''
+name: David
+email: 7e872eb18f0d66166ad944eaa9d2362a
+body: >-
+  I ended up just upgrading from Jessie to Stretch, which comes with OpenSSL
+  1.1.0.
+date: '2019-05-02T10:30:26.035Z'
