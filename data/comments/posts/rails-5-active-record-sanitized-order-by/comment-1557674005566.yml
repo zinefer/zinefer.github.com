@@ -1,0 +1,8 @@
+_id: 7d1ffb80-74c8-11e9-9a37-151750ca2f5b
+_parent: rails-5-active-record-sanitized-order-by
+reply_to: 6b3b1030-6be0-11e9-8b97-1fb782556955
+botpot: ''
+name: mcfoton
+email: 0dbeabe0ff71a15a159c95a78d0326bd
+body: "Thanks! I've found some more edge cases. I'll try to fix them and will update you a bit later. For now these are:\r\n1. When model is joined using a single form: `joins(:state)` it will not match against klass.pluralize.to_sym\r\n2. When join is done using syntax of `joins(model1: :model2)` it should unwrap the hash from `joins_values`\r\n\r\nP.S. I believe this is a valuable snippet we should polish so you can post it all over stackoverflow :)"
+date: '2019-05-12T15:13:25.565Z'
