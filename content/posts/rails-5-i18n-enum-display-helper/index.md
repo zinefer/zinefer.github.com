@@ -56,7 +56,7 @@ module EnumDisplayHelper
     klass.human_attribute_name([enum_attr, value].join('.'))
   end
 
-  # enum_options_for_form(Member, :role)
+  # enum_options_for_select(Member, :role)
   # Returns an array of enum translations and their raw versions for use
   # in select_tag
   def enum_options_for_select(klass, enum)
