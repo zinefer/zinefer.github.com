@@ -1,0 +1,8 @@
+_id: 7e945100-85a8-11e9-a552-49290dda40d5
+_parent: installing-python-3.7-on-debian-8
+reply_to: ''
+botpot: ''
+name: Molly
+email: b352dc144e7b1fd440c762d444ee52f3
+body: "libffi-dev is also needed in the prerequisite dependency. Also, since my GCC is of older version (4.9.2), I need to get rid of \"--enable-optimizations\" to make it work. After those two fixes, the tutorial works as magic. Thank you!\r\n\r\nReference:\r\nhttps://bugs.python.org/issue35074\r\nhttps://bugs.python.org/issue31652"
+date: '2019-06-03T02:37:13.952Z'
