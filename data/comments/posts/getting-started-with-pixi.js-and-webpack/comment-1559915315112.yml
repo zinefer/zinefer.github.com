@@ -1,0 +1,8 @@
+_id: f1a25450-892a-11e9-9ccd-f79bc16681a7
+_parent: getting-started-with-pixi.js-and-webpack
+reply_to: 27609600-879c-11e9-b7f5-492ffc72aa87
+botpot: ''
+name: James Kiefer
+email: e8446e6559d00c44a63238ccc6317bd0
+body: "Thanks for this report. \r\n\r\nI think the main culprit was a typo in the name of the webpack config file. Make sure your file is named `webpack.config.js`. \r\n\r\nI've also updated the Pixi code for version 5 which slightly altered the loader syntax."
+date: '2019-06-07T13:48:35.107Z'
