@@ -1,9 +1,9 @@
 +++
 date = "2019-06-03T09:27:23-06:00"
-title = "First CNC Router Project Velociraptor"
+title = "First CNC Router Project: Velociraptor"
 description = "Creating a dinosaur with my new CNC router"
 categories = "Making"
-tags = ["CNC", "Fusion 360", "Dinosaurs"]
+tags = ["CNC Routing", "Fusion 360", "Dinosaurs"]
 +++
 
 <center>

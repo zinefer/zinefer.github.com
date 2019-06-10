@@ -3,7 +3,7 @@ date = "2019-04-24T23:54:21-06:00"
 title = "Assembling my new CNC Router"
 description = "Finally building my new 4x8 CNC router"
 categories = "Making"
-tags = ["CNC Router", "New Equipment", "80/20"]
+tags = ["CNC Routing", "New Equipment", "80/20"]
 +++
 
 Along with my new [laser]({{< ref "/posts/uncrating-my-new-laser/index.md" >}}) I also purchased a 4' x 8' CNC Router Kit from [cncrouterparts](http://www.cncrouterparts.com).
