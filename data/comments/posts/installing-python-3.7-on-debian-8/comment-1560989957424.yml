@@ -1,0 +1,8 @@
+_id: 0a620380-92f1-11e9-b412-3175ec7cc1c8
+_parent: installing-python-3.7-on-debian-8
+reply_to: 729309d0-681d-11e9-9a7c-cb22f36a6d44
+botpot: ''
+name: tuongnn
+email: dc39e42b79bfd94ccc1e123b9e6e580b
+body: "@James Kiefer: Thanks for this post. It helps me alot.\r\nI successfully upgraded Python to v3.7.3 on Ubuntu14 32bit (has SSL 1.0.2f).\r\nI also faced error \"undefined symbol\" as David did. (when I compiled same version of openssl as in Ubuntu14)\r\nProblem was solved after I changed to use openssl 1.1."
+date: '2019-06-20T00:19:17.412Z'
