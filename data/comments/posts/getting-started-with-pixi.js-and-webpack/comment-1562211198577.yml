@@ -1,0 +1,8 @@
+_id: 76d02760-9e0c-11e9-89f0-83f5c11baf98
+_parent: getting-started-with-pixi.js-and-webpack
+reply_to: ''
+botpot: ''
+name: Ezra B
+email: ''
+body: "Heads up: it looks like they changed the syntax for the CleanWebpackPlugin. I was getting \"TypeError: CleanWebpackPlugin is not a constructor\" on build, resolved by changing a couple lines, as noted in this SO thread: https://stackoverflow.com/questions/56567930/typeerror-cleanwebpackplugin-is-not-a-constructor\r\n\r\nThanks for this quick setup guide. It can be hard to find good, minimal boilerplate when starting new projects too try out technologies."
+date: '2019-07-04T03:33:18.571Z'
