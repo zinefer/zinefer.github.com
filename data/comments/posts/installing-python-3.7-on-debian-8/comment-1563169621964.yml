@@ -4,5 +4,5 @@ reply_to: ''
 botpot: ''
 name: Ohnomo
 email: aeb88261a003cb93d8e6cd9e4eb848cc
-body: "These helped me get this BS working :p\r\nexport LDFLAGS=\"-L/usr/local/lib/\"\r\nexport LD_LIBRARY_PATH=\"/usr/local/lib/\"\r\nexport CPPFLAGS=\"-I/usr/local/include -I/usr/local/include/openssl\""
+body: "These helped me get this BS working :p\r\n\r\n\r\nexport LDFLAGS=\"-L/usr/local/lib/\"\r\n\r\nexport LD_LIBRARY_PATH=\"/usr/local/lib/\"\r\n\r\nexport CPPFLAGS=\"-I/usr/local/include -I/usr/local/include/openssl\""
 date: '2019-07-15T05:47:01.963Z'
