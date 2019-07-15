@@ -45,7 +45,7 @@ tags = ["Arduino", "Laser Cutting", "Soldering", "APA102"]
 # Trying out the foam
 
 <center>
-  {{< mosaic "3x1" "20190622_122734.jpg" "20190622_160556.jpg" "20190621_165145.jpg" "20190622_171727.jpg" >}}
+  {{< mosaic "3x1" "20190622_122734.jpg" "20190622_160556.jpg" "20190621_165145.jpg" "thumb.jpg" >}}
 </center>
 
 # Spin
