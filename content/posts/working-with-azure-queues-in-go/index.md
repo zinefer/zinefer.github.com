@@ -40,7 +40,7 @@ if err != nil {
 }
 ```
 
-# Create queue and or check message count
+# Create queue and check message count
 
 ```golang
 queueUrl := azqueue.NewQueueURL(*_url, azqueue.NewPipeline(credential, azqueue.PipelineOptions{}))
@@ -98,7 +98,7 @@ if messageCount > 0 {
 }
 ```
 
-# Insert queue messages
+# Push queue messages
 
 ```golang
 newMessageContent := fmt.Sprintf("Hello world at %v", time.Now().Format(time.RFC3339))
@@ -123,13 +123,13 @@ if err != nil {
 }
 
 for i := int32(0); i < dequeueResp.NumMessages(); i++ {
-
   msg := dequeueResp.Message(i)
   log.Printf("Deleting %v: {%v}", i, msg.Text)
 
   msgIdUrl := msgUrl.NewMessageIDURL(msg.ID)
 
-  // PopReciept is required to delete the Message. If deletion fails using this popreceipt then the message has been dequeued by another client.
+  // PopReciept is required to delete the Message. If deletion fails using this popreceipt then the message has
+  // been dequeued by another client.
   _, err = msgIdUrl.Delete(ctx, msg.PopReceipt)
   if err != nil {
     log.Fatal("Error deleting message: ", err)
