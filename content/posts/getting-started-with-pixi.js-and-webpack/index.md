@@ -69,13 +69,13 @@ module.exports = {
 
 ## Configure webpack plugins
 
-- `clean-webpack-plugin` to clean the `dist` folder between builds
-- `html-webpack-plugin` to generate an index.html in the `dist` folder
-- `copy-webpack-plugin` to copy assets from `src` to `dist`
-
 ```bash
 npm install clean-webpack-plugin html-webpack-plugin copy-webpack-plugin --save-dev
 ```
+
+- `clean-webpack-plugin` to clean the `dist` folder between builds
+- `html-webpack-plugin` to generate an index.html in the `dist` folder
+- `copy-webpack-plugin` to copy assets from `src` to `dist`
 
 Configure the plugins in `webpack.config.js`
 
