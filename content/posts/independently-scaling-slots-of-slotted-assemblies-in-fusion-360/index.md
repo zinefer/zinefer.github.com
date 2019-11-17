@@ -3,7 +3,7 @@ date = "2019-06-05T16:51:41-06:00"
 title = "Independently Scaling slots of Slotted Assemblies in Fusion 360"
 description = "I needed to scale a dinosaur to epic proportions"
 categories = "Modeling"
-tags = ["Fusion 360", "Routing", "Laser Cutting", "Dinosaurs", "Parametric"]
+tags = ["Fusion 360", "CNC Routing", "Laser Cutting", "Dinosaurs", "Parametric"]
 +++
 
 Before importing the design into Fusion I wanted to have the slots closed off but I still needed the slots included in the vector. I found a pretty easy process for this in illustrator:
