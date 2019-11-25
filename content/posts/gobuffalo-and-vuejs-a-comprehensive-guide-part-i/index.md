@@ -146,7 +146,6 @@ Remove the flash partial call from this file.
 
 ```html
 <div id="app">
-  <router-link to="/">Home</router-link>
   <router-view></router-view>
 </div>
 ```
@@ -155,37 +154,7 @@ Remove the flash partial call from this file.
 
 At this point our tests are broken but we can fix them. `home_test.go` checks the contents of the home handler and we've altered it. Lets change `"Welcome to Buffalo"` to `"<div id=\"app\">"`.
 
-## Modify assets/js/application.js
-
-{{< highlight javascript "hl_lines=4-6 10-23" >}}
-require("expose-loader?$!expose-loader?jQuery!jquery");
-require("bootstrap/dist/js/bootstrap.bundle.js");
-
-import Vue from "vue";
-import VueRouter from "router";
-import HomeComponent from "./components/home.vue";
-
-$(() => {
-
-  Vue.use(VueRouter);
-
-  const routes = [
-    {path: "/", component: HomeComponent}
-  ];
-
-  const router = new VueRouter({
-    mode: "history",
-    routes
-  });
-
-  const app = new Vue({
-    router
-  }).$mount("#app");
-
-});
-{{</highlight>}}
-
-## Create assets/js/components/home.vue
+## Create assets/js/pages/home.vue
 
 ```html
 <template>
@@ -205,6 +174,36 @@ export default {
 };
 </script>
 ```
+
+## Modify assets/js/application.js
+
+{{< highlight javascript "hl_lines=4-6 10-23" >}}
+require("expose-loader?$!expose-loader?jQuery!jquery");
+require("bootstrap/dist/js/bootstrap.bundle.js");
+
+import Vue from "vue";
+import VueRouter from "router";
+import HomePage from "./pages/home.vue";
+
+$(() => {
+
+  Vue.use(VueRouter);
+
+  const routes = [
+    {path: "/", component: HomePage}
+  ];
+
+  const router = new VueRouter({
+    mode: "history",
+    routes
+  });
+
+  const app = new Vue({
+    router
+  }).$mount("#app");
+
+});
+{{</highlight>}}
 
 At this point your tests should pass with `buffalo test` and you can access your Vue app via `buffalo dev`.
 
@@ -242,12 +241,12 @@ Configure Jest.
 
 ```javascript
 import { shallowMount } from '@vue/test-utils'
-import HomeComponent from "../../components/home.vue";
+import HomePage from "../../pages/home.vue";
 
 let wrapper = null
 
 beforeEach(() => {
-  wrapper = shallowMount(HomeComponent)
+  wrapper = shallowMount(HomePage)
 })
 
 afterEach(() => {
@@ -264,7 +263,7 @@ describe('Home', () => {
 ## Running Vue.js tests
 
 ```bash
-yarn run test
+yarn test
 ```
 
 <br/>
