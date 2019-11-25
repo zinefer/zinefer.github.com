@@ -1,6 +1,6 @@
 +++
 date = "2019-11-16T20:31:25-07:00"
-title = "goBuffalo and Vue.js: a Comprehensive Guide - Part I"
+title = "goBuffalo and Vue.js: a Comprehensive Walkthrough - Part I"
 description = "Asset pipeline, Testing, Docker and Azure Devops CI/CD for goBuffalo and Vuejs"
 categories = "Software"
 tags = ["Go", "goBuffalo", "Webpack", "Vue.js", "Jest", "Docker"]
