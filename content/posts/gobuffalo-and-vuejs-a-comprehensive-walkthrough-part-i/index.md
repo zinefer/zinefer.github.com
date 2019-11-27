@@ -1,12 +1,12 @@
 +++
 date = "2019-11-16T20:31:25-07:00"
 title = "goBuffalo and Vue.js: a Comprehensive Walkthrough - Part I"
-description = "Asset pipeline, Testing, Docker and Azure Devops CI/CD for goBuffalo and Vuejs"
+description = "Asset pipeline, Testing, Docker, Travis-CI and CD for goBuffalo and Vuejs"
 categories = "Software"
 tags = ["Go", "goBuffalo", "Webpack", "Vue.js", "Jest", "Docker"]
 +++
 
-This is the first part of a guide intended to assist in start a new [Vue.js](https://vuejs.org/) project ontop of [Buffalo](https://gobuffalo.io/). In this first part we will integrate Vue.js into the Buffalo asset pipeline, adjust the tests and create a base to begin development upon in the next post.
+This is the first part of a guide intended to assist in start a new [Vue.js](https://vuejs.org/) project ontop of [Buffalo](https://gobuffalo.io/). In this first part we will integrate Vue.js into the Buffalo asset pipeline, adjust the tests and create a base to begin development upon in the [next post]({{<ref "/posts/gobuffalo-and-vuejs-a-comprehensive-guide-part-ii">}}).
 
 # Prerequisites
 
@@ -156,7 +156,7 @@ At this point our tests are broken but we can fix them. `home_test.go` checks th
 
 ## Create assets/js/pages/home.vue
 
-```html
+```vue
 <template>
 <div>
   <h1 class="page-header">Welcome</h1>
@@ -318,3 +318,41 @@ docker run -it -p "3000:3000" myapp
 ```
 
 You should be able to access your app from the browser via http://localhost:3000.
+
+# Enable Travis-CI
+
+Follow [this guide](https://docs.travis-ci.com/user/tutorial/) to give travis permissions to your repository.
+
+## Create .travis.yml
+
+```yaml
+dist: bionic
+
+services:
+  - postgresql
+addons:
+  postgresql: 10
+
+language: go
+go:
+- 1.12.x
+# Force-enable Go modules. This will be unnecessary when Go 1.14 lands.
+env: GO111MODULE=on
+
+# Only clone the most recent commit.
+git:
+  depth: 1
+
+# Install buffalo
+before_script:
+  - wget https://github.com/gobuffalo/buffalo/releases/download/v0.15.1/buffalo_0.15.1_linux_amd64.tar.gz
+  - tar -xvzf buffalo_0.15.1_linux_amd64.tar.gz
+  - sudo mv buffalo /usr/local/bin/buffalo
+
+script:
+  - go vet ./...
+  - buffalo test
+  - yarn install --no-progress
+  - yarn test
+  - buffalo build --static
+```
