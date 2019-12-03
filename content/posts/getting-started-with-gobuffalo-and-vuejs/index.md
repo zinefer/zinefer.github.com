@@ -1,12 +1,12 @@
 +++
 date = "2019-11-16T20:31:25-07:00"
-title = "goBuffalo and Vue.js: a Comprehensive Walkthrough - Part I"
+title = "Getting started with goBuffalo and Vue.js"
 description = "Asset pipeline, Testing, Docker, Travis-CI and CD for goBuffalo and Vuejs"
 categories = "Software"
-tags = ["Go", "goBuffalo", "Webpack", "Vue.js", "Jest", "Docker"]
+tags = ["Go", "goBuffalo", "Webpack", "Vue.js", "Jest", "Travis-ci", "Coveralls", "Docker"]
 +++
 
-This is the first part of a guide intended to assist in start a new [Vue.js](https://vuejs.org/) project ontop of [Buffalo](https://gobuffalo.io/). In this first part we will integrate Vue.js into the Buffalo asset pipeline, adjust the tests and create a base to begin development upon in the [next post]({{<ref "/posts/gobuffalo-and-vuejs-a-comprehensive-guide-part-ii">}}).
+This is the first part of a guide intended to assist in start a new [Vue.js](https://vuejs.org/) project ontop of [Buffalo](https://gobuffalo.io/). In this first part we will integrate Vue.js into the Buffalo asset pipeline, adjust the tests and create a base to begin development upon in the next post.
 
 # Prerequisites
 
@@ -24,6 +24,8 @@ This is the first part of a guide intended to assist in start a new [Vue.js](htt
 - [Setup Vue.js testing with Jest](#setup-vue-js-testing-with-jest)
 - [Exploring the Buffalo test tooling](#exploring-the-buffalo-test-tooling)
 - [Creating and running the Docker image](#creating-and-running-the-docker-image)
+- [Enable Travis-CI](#enable-travis-ci)
+- [Enable Coveralls](#enable-coveralls)
 
 <br/>
 
@@ -343,16 +345,47 @@ env: GO111MODULE=on
 git:
   depth: 1
 
-# Install buffalo
 before_script:
+  # Install buffalo
   - wget https://github.com/gobuffalo/buffalo/releases/download/v0.15.1/buffalo_0.15.1_linux_amd64.tar.gz
   - tar -xvzf buffalo_0.15.1_linux_amd64.tar.gz
   - sudo mv buffalo /usr/local/bin/buffalo
+  # Install goveralls to push code coverage to coverage.io
+  - go get github.com/mattn/goveralls
 
 script:
   - go vet ./...
-  - buffalo test
+  - buffalo test -covermode=count -coverprofile=c.out ./...
   - yarn install --no-progress
   - yarn test
   - buffalo build --static
+
+after_script:
+  - $GOPATH/bin/goveralls -coverprofile=c.out -service=travis-ci
+  - cat ./coverage/lcov.info | yarn run coveralls
 ```
+
+# Enable Coveralls
+
+Give [coveralls.io](https://docs.coveralls.io/) permissions to your repository.
+
+```bash
+yarn add --dev coveralls
+```
+
+## Modify .travis.yml
+
+{{< highlight yaml "hl_lines=5-6 10-12" >}}
+# ...
+
+before_script:
+  # ...
+  # Install goveralls to push code coverage to coverage.io
+  - go get github.com/mattn/goveralls
+
+# ...
+
+after_script:
+  - $GOPATH/bin/goveralls -coverprofile=c.out -service=travis-ci
+  - cat ./coverage/lcov.info | yarn run coveralls
+{{</highlight>}}
