@@ -307,6 +307,8 @@ buffalo test all
 
 # Creating and running the Docker image
 
+Buffalo generated a docker file for us when we created our appplication. Let's build it with:
+
 ```bash
 docker build . -t myapp
 ```
