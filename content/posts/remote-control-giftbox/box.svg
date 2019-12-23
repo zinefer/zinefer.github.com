@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1314 873" style="enable-background:new 0 0 1314 873;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;stroke:#000000;stroke-width:1.000000e-03;stroke-linecap:round;stroke-miterlimit:288;}
+</style>
+<g id="svgGroup">
+	<path id="front_outsideCutPath" vector-effect="non-scaling-stroke" class="st0" d="M0,441v143.8h8.5v144.4H0V873h143.8v-8.5h144.4
+		v8.5H432V729.2h-8.5V584.8h8.5V441H0z"/>
+	<path id="left_outsideCutPath" vector-effect="non-scaling-stroke" class="st0" d="M449.5,441v143.8H441v144.4h8.5V873h135.3v-8.5
+		h144.4v8.5h135.3V729.2h8.5V584.8h-8.5V441H449.5z"/>
+	<path id="back_outsideCutPath" vector-effect="non-scaling-stroke" class="st0" d="M0,0v143.8h8.5v144.4H0V432h143.8v-8.5h144.4
+		v8.5H432V288.2h-8.5V143.8h8.5V0H0z"/>
+	<path id="right_outsideCutPath" vector-effect="non-scaling-stroke" class="st0" d="M449.5,0v143.8H441v144.4h8.5V432h135.3v-8.5
+		h144.4v8.5h135.3V288.2h8.5V143.8h-8.5V0H449.5z"/>
+	<path id="bottom_outsideCutPath" vector-effect="non-scaling-stroke" class="st0" d="M890.5,449.5v135.3H882v144.4h8.5v135.3h135.3
+		v8.5h144.4v-8.5h135.3V729.2h8.5V584.8h-8.5V449.5h-135.3V441h-144.4v8.5H890.5z"/>
+</g>
+</svg>
