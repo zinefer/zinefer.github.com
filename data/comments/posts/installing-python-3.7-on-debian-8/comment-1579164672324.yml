@@ -1,0 +1,10 @@
+_id: 58c92840-383d-11ea-b7c5-6907fb0bb98f
+_parent: installing-python-3.7-on-debian-8
+reply_to: 7e945100-85a8-11e9-a552-49290dda40d5
+captcha: ''
+name: René
+email: 85f5c39aea1e2959b6ce766ea3239268
+body: >-
+  Works exactly the way as Molly said: libffi-dev is not usually a preinstalled
+  package, needs to be added on Debian 8 "Jessie".
+date: '2020-01-16T08:51:12.322Z'
