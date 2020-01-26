@@ -1,0 +1,8 @@
+_id: 655e13f0-407f-11ea-9aef-6b853f55af71
+_parent: installing-python-3.7-on-debian-8
+reply_to: ''
+captcha: ''
+name: Bentong
+email: ''
+body: "Hi!\r\nhad some trouble with the OpenSSL bit attempting a Python 3.7.6 install.\r\n\r\nI used OpenSSL 1.1.0l, so i just changed the so.1.0 files to so.1.1, and before running make on python, i had to run ldconfig so /usr/local/bin/openssl would run properly.\r\nalso had to run the python ./configure without the --enable-optimizations switch.\r\n\r\ni also  had an issue with _ctypes module, quicly solved by running apt-get install libffi-dev."
+date: '2020-01-26T21:04:09.512Z'
