@@ -3,7 +3,7 @@ date = "2019-09-29T20:49:40-06:00"
 title = "Working with Azure Queues in Go"
 description = "Quick snippets to read/write/clear Azure Queues in Golang"
 categories = "Software"
-tags = ["Go", "Application Development", "Azure"]
+tags = ["Go", "Azure"]
 +++
 
 I recently needed to write to an Azure Queue in Golang but I struggled to find a quick and simple example so here are some snippets you can use for your needs.
