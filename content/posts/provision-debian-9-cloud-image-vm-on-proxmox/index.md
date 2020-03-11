@@ -3,7 +3,7 @@ date = "2020-03-11T12:54:00-06:00"
 title = "Provision Debian 9 cloud image VM on Proxmox"
 description = "A quick guide to provision a Debain Stretch cloud-init VM on Proxmox 6"
 categories = "Software"
-tags = ["Proxmox", "System Administration"]
+tags = ["Proxmox", "System Administration", "Terraform"]
 +++
 
 # Download Debian 9 cloud image (openstack)
@@ -42,4 +42,31 @@ qm set 101 --ipconfig0 ip=10.0.0.5/32,gw=10.0.0.1
 qm set 123 --sshkey ~/.ssh/id_rsa.pub
 qm set 101 --onboot 1
 qm start 101
+```
+
+# Creating a VM from our template with Terraform
+
+If you happen to need to accomplish this with [Terraform](//github.com/Telmate/terraform-provider-proxmox) I've got you covered.
+
+```tf
+resource "proxmox_vm_qemu" "vm" {
+  name        = var.name
+  target_node = "proxmox"
+  clone       = "debian-cloud-image"
+
+  disk {
+    id       = 0
+    size     = 2
+    type     = "virtio"
+    iothread = true
+    storage  = "vdisk"
+    storage_type = "lvm"
+  }
+
+  ssh_user  = "root"
+  ipconfig0 = "ip=10.0.0.5/32,gw=10.0.0.1"
+  sshkeys   = <<EOF
+  ssh-rsa public key for ssh
+  EOF
+}
 ```
