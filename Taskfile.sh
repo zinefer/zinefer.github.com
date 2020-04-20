@@ -1,5 +1,8 @@
 #!/bin/bash
 
+GH='/usr/local/bin/gh'
+BAD_WORDS=(cialis amoxicillin)
+
 function build {
     hugo --minify
 
@@ -15,6 +18,24 @@ function build {
 function deploy {
     build
     rsync -azvhe ssh --delete --progress public/* jameskiefer.com:/var/www/jameskiefer/
+}
+
+function clean-prs {
+    PRS=( $(hub pr list -f "%I ") )
+
+    for pr in ${PRS[*]}; do
+        echo "Pull Request #$pr"
+        for badword in ${BAD_WORDS[*]}; do
+            if hub pr show $pr -f "%b" | grep -q -i $badword; then
+                echo "  detected badword \"$badword\""
+                echo "  marking spam and closing"
+                hub issue update $pr -l spam --state closed
+                echo "  deleting branch"
+                git push --quiet origin --delete $(hub pr show $pr -f "%H")
+                break
+            fi
+        done
+    done
 }
 
 function help {
