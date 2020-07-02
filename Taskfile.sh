@@ -26,7 +26,7 @@ function build {
 function deploy {
     STORAGE_ACCOUNT=${1?}
     DEST="https://$STORAGE_ACCOUNT.blob.core.windows.net/\$web"
-    azcopy sync --delete-destination=true --recursive public $DEST
+    azcopy_v10 sync --delete-destination=true --recursive public $DEST
 }
 
 function clean-prs {
