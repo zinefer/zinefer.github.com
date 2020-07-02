@@ -18,16 +18,11 @@ jobs:
         ref: resources
         path: resources
 
-    - name: Install Hugo
+    - name: Install dependencies
       run: ./Taskfile.sh install
     
     - name: Build content
       run: ./Taskfile.sh build
-
-    - name: Azure Login
-      uses: azure/login@v1
-      with:
-        creds: ${{ secrets.AZURE_RBAC_CREDENTIALS }}
 
     - name: Commit resources cache
       uses: EndBug/add-and-commit@v4
@@ -40,6 +35,10 @@ jobs:
     
     - name: Remove .git directory
       run: rm -rf public/.git
-    
+
     - name: Publish content
+      uses: kheiakiyama/install-azcopy-action@v1
+      with:
+        version: 'v10'
+        creds: ${{ secrets.AZURE_RBAC_CREDENTIALS }}
       run: ./Taskfile.sh deploy ${{ secrets.AZURE_STORAGE_ACCOUNT_NAME }}
