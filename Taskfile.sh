@@ -5,6 +5,7 @@ BAD_WORDS=(cialis amoxicillin)
 
 function install {
     ./devops/scripts/install-hugo.sh
+    ./devops/scripts/install-azcopy.sh
 
     npm install postcss-cli
     npm install autoprefixer
@@ -25,7 +26,8 @@ function build {
 
 function deploy {
     STORAGE_ACCOUNT=${1?}
-    az storage blob upload-batch -s ./public -d \$web --account-name $STORAGE_ACCOUNT
+    DEST="https://$STORAGE_ACCOUNT.blob.core.windows.net/\$web"
+    azcopy sync --delete-destination=true --recursive public $DEST
 }
 
 function clean-prs {
