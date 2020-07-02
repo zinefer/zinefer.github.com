@@ -22,6 +22,6 @@ INSTALLER=$(basename $URL)
 
 wget -q --show-progress -P /tmp $URL
 
-dpkg -i /tmp/$INSTALLER
+sudo dpkg -i /tmp/$INSTALLER
 
 rm /tmp/$INSTALLER
