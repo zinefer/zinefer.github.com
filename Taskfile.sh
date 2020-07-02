@@ -3,6 +3,14 @@
 GH='/usr/local/bin/gh'
 BAD_WORDS=(cialis amoxicillin)
 
+function install {
+    ./devops/scripts/install-hugo.sh
+
+    npm install postcss-cli
+    npm install autoprefixer
+    npm install postcss-easing-gradients
+}
+
 function build {
     hugo --minify
 
@@ -12,12 +20,12 @@ function build {
     else
         echo "Spookfest not found"
         exit 1
-    fi    
+    fi
 }
 
 function deploy {
-    build
-    rsync -azvhe ssh --delete --progress public/* jameskiefer.com:/var/www/jameskiefer/
+    STORAGE_ACCOUNT=${1?}
+    az storage blob upload-batch -s ./public -d \$web --account-name $STORAGE_ACCOUNT
 }
 
 function clean-prs {

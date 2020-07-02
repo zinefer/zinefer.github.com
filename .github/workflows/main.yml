@@ -1,0 +1,45 @@
+name: Publish Static Web App to Azure Blob Storage
+
+on: push
+
+jobs:
+  Build-and-Publish:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout main repo
+      uses: actions/checkout@v2
+      with:
+        submodules: true
+
+    - name: Checkout resources cache
+      uses: actions/checkout@v2
+      with:
+        ref: resources
+        path: resources
+
+    - name: Install Hugo
+      run: ./Taskfile.sh install
+    
+    - name: Build content
+      run: ./Taskfile.sh build
+
+    - name: Azure Login
+      uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_RBAC_CREDENTIALS }}
+
+    - name: Commit resources cache
+      uses: EndBug/add-and-commit@v4
+      with:
+        message: Deploy #${{ github.run_number }}
+        cwd: resources
+        ref: resources
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    
+    - name: Remove .git directory
+      run: rm -rf public/.git
+    
+    - name: Publish content
+      run: ./Taskfile.sh deploy ${{ secrets.AZURE_STORAGE_ACCOUNT_NAME }}

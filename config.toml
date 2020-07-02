@@ -10,7 +10,7 @@ enableEmoji = true
 googleAnalytics = "UA-124058172-1"
 
 theme = "carbon"
-timeout = 60000
+timeout = 300000
 
 [markup.goldmark.renderer]
   unsafe = true
