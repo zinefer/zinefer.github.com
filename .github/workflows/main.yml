@@ -36,9 +36,11 @@ jobs:
     - name: Remove .git directory
       run: rm -rf public/.git
 
-    - name: Publish content
+    - name: Install azcopy
       uses: kheiakiyama/install-azcopy-action@v1
       with:
         version: 'v10'
         creds: ${{ secrets.AZURE_RBAC_CREDENTIALS }}
+    
+    - name: Publish content
       run: ./Taskfile.sh deploy ${{ secrets.AZURE_STORAGE_ACCOUNT_NAME }}

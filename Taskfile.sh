@@ -5,7 +5,6 @@ BAD_WORDS=(cialis amoxicillin)
 
 function install {
     ./devops/scripts/install-hugo.sh
-    ./devops/scripts/install-azcopy.sh
 
     npm install postcss-cli
     npm install autoprefixer
