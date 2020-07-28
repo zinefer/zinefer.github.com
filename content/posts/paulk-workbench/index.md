@@ -33,7 +33,7 @@ I suggest thorougly marking every piece and cut you can think of with pencil. Ma
 ## [Kreg Accu-cut](https://www.amazon.com/Kreg-KMA2700-Circular-Saw-Track/dp/B073PGP96S) and [Kreg Rip Cut](https://www.amazon.com/KREG-KMA2675-Kreg-Rip-Cut/dp/B007K5HIFS)
 
 <center>
-  {{< image "accucut.jpg" "Resize" "325x" />}}
+  {{< image "accucut.jpg" "Resize" "x215" />}}
   {{< image "ripcut.jpg" "Resize" "325x" />}}
 </center>
 
