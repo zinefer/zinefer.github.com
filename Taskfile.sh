@@ -26,7 +26,11 @@ function build {
 function deploy {
     STORAGE_ACCOUNT=${1?}
     DEST="https://$STORAGE_ACCOUNT.blob.core.windows.net/\$web"
+    RESOURCE_GROUP=`az storage account show -n $STORAGE_ACCOUNT | jq -r .resourceGroup`
+    PROFILE_NAME=`az cdn profile list -g $RESOURCE_GROUP | jq -r .[0].name`
+    CDN_ENDPOINT=`az cdn endpoint list -g $RESOURCE_GROUP --profile-name $PROFILE_NAME | jq -r .[0].name`
     azcopy_v10 sync --delete-destination=true --recursive public $DEST
+    az cdn endpoint purge -n $CDN_ENDPOINT --profile-name $PROFILE_NAME --content-paths "/*" --resource-group $RESOURCE_GROUP --no-wait
 }
 
 function clean-prs {
