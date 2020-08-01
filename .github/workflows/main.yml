@@ -44,6 +44,10 @@ jobs:
       with:
         version: 'v10'
         creds: ${{ secrets.AZURE_RBAC_CREDENTIALS }}
+
+    - uses: azure/login@v1.1
+      with:
+        creds: ${{ secrets.AZURE_RBAC_CREDENTIALS }}
     
     - name: Publish content
       run: ./Taskfile.sh deploy ${{ secrets.AZURE_STORAGE_ACCOUNT_NAME }}
