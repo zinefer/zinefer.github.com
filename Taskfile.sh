@@ -51,6 +51,26 @@ function clean-prs {
     done
 }
 
+function compress-videos {
+    for i in content/posts/$1/*.mp4; do 
+        ffmpeg -y -i "$i" -c:v libx264 -crf 20 "${i%.*}_compress.mp4";
+    done
+}
+
+function new {
+    TYPE=${1?}
+    NAME=${2}
+
+    if [ ! -d "content/$TYPE" ]; then
+        NAME=$TYPE
+        TYPE=posts
+    fi
+
+    NAME=`echo $NAME | tr '[:upper:]' '[:lower:]' | tr ' ' '-'`
+
+    hugo new $TYPE/$NAME/index.md
+}
+
 function help {
     echo "$0 <task> <args>"
     echo "Tasks:"
@@ -58,4 +78,4 @@ function help {
 }
 
 TIMEFORMAT="Task completed in %3lR"
-time ${@:-help}
+time "${@:-help}"

@@ -42,7 +42,7 @@ jobs:
     - name: Install azcopy
       uses: kheiakiyama/install-azcopy-action@v1
       with:
-        version: 'v10'
+        version: v10
         creds: ${{ secrets.AZURE_RBAC_CREDENTIALS }}
 
     - uses: azure/login@v1.1
