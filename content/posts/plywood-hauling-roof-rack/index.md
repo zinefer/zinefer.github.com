@@ -22,11 +22,6 @@ It took a few tries before I found a width spacer size that worked well.
 I used some threaded inserts and cut one side of the bracket out to create some leave-in hardware.
 
 <center>
-  {{< image "20200831_225749.jpg" "Resize" "325x" />}}
-  {{< image "20200831_223808.jpg" "Resize" "325x" />}}
-</center>
-
-<center>
   {{< image "20200906_150112.jpg" "Resize" "700x" />}}
 </center>
 
