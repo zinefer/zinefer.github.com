@@ -26,5 +26,5 @@ I used some threaded inserts and cut one side of the bracket out to create some 
 </center>
 
 <center>
-  {{< mosaic "2x1" "20200912_100811.jpg" "20200912_102821.jpg" "20200912_102830.jpg" >}}
+  {{< mosaic "2x1" "thumb.jpg" "20200912_102821.jpg" "20200912_102830.jpg" >}}
 </center>
