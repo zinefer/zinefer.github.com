@@ -9,6 +9,11 @@ jobs:
   versions:
     runs-on: ubuntu-latest
     steps:
+    - name: Checkout repo
+      uses: actions/checkout@v2
+      with:
+        submodules: true
+
     - name: Check for new hugo version
       id: versions
       run: |
