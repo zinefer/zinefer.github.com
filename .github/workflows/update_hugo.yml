@@ -1,0 +1,76 @@
+name: Check for new Hugo version and regressions  
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: 0 0 1,15 * *
+
+jobs:
+  versions:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check for new hugo version
+      id: versions
+      run: |
+        NEW=$(curl -s https://api.github.com/repos/gohugoio/hugo/releases/latest | jq -r .name)
+        OLD=$(cat .hugoversion)
+        echo "::set-output name=new::$NEW"
+        echo "::set-output name=old::$OLD"
+
+
+  test:
+    runs-on: ubuntu-latest
+    needs: versions
+    if: needs.versions.outputs.old != needs.versions.outputs.new
+    steps:
+    - name: Checkout repo
+      uses: actions/checkout@v2
+      with:
+        submodules: true
+    
+    - name: Install dependencies
+      run: |
+        npm install -g backstopjs
+        npm install -g sitemap-urls
+        ./Taskfile.sh install
+
+    - name: Checkout resources cache
+      uses: actions/checkout@v2
+      with:
+        ref: resources
+        path: resources
+  
+    - name: Generate Screenshots for old hugo version
+      run: |
+        hugo serve &
+        ./Taskfile.sh wait-for localhost:1313
+        backstop reference --config=devops/backstopjs/main.js --docker
+        kill %1
+
+    - name: Run regression test against old screenshots
+      env:
+        VERSION: ${{ needs.versions.outputs.new }}
+      run: |
+        echo $(VERSION) > .hugoversion
+        ./Taskfile.sh install
+        hugo serve &
+        ./Taskfile.sh wait-for localhost:1313
+        backstop test --config=devops/backstopjs/main.js --docker
+        kill %1
+    
+    - name: Create update-hugo branch
+      uses: EndBug/add-and-commit@v5
+      with:
+        ref: update-hugo
+        add: .hugoversion
+        message: Update Hugo to ${{ needs.versions.outputs.new }}
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Create a pull request to update Hugo version
+      uses: repo-sync/pull-request@v2
+      with:
+        source_branch: update-hugo
+        pr_title: Update Hugo to ${{ needs.versions.outputs.new }}
+        pr_body: ":crown: Hugo update!"
+        github_token: ${{ secrets.GITHUB_TOKEN }}

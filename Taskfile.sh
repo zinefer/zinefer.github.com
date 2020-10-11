@@ -23,6 +23,33 @@ function build {
     fi
 }
 
+function wait-for {
+    URL=${1?}
+    CODE=${2:-200}
+
+    start=$SECONDS
+
+    timeout --foreground 300 bash \
+	<<-EOD
+		until [[ "\$RESP" == "$CODE" ]]; do 
+			test "\$RESP" && sleep 1
+			RESP=$(curl -sIL -o /dev/null -w '%{http_code}' $URL | tr -d '\n')
+			echo -ne "\$RESP "
+        done
+	EOD
+
+    duration=$(( SECONDS - start ))
+
+    echo 
+
+    if [[ $? -eq 0 ]]; then
+        echo "$URL returned $CODE in $duration seconds"
+    else
+        echo "$URL timed out after $duration waiting for $CODE"
+        exit 1
+    fi
+}
+
 function deploy {
     STORAGE_ACCOUNT=${1?}
     DEST="https://$STORAGE_ACCOUNT.blob.core.windows.net/\$web"
