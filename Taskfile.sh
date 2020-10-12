@@ -5,12 +5,7 @@ BAD_WORDS=(cialis amoxicillin)
 
 function install {
     ./devops/scripts/install-hugo.sh
-
-    npm install postcss-cli
-    npm install autoprefixer
-    npm install postcss-easing-gradients
-
-    npm -v postcss-cli
+    npm install --prefix themes/carbon
 }
 
 function build {
