@@ -9,6 +9,8 @@ function install {
     npm install postcss-cli
     npm install autoprefixer
     npm install postcss-easing-gradients
+
+    npm -v postcss-cli
 }
 
 function build {
@@ -39,10 +41,11 @@ function wait-for {
 	EOD
 
     duration=$(( SECONDS - start ))
+    RET=$?
 
     echo 
 
-    if [[ $? -eq 0 ]]; then
+    if [[ $RET -eq 0 ]]; then
         echo "$URL returned $CODE in $duration seconds"
     else
         echo "$URL timed out after $duration waiting for $CODE"

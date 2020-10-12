@@ -64,6 +64,12 @@ jobs:
         ./Taskfile.sh wait-for localhost:1313
         backstop test --config=devops/backstopjs/main.js --docker
         kill %1
+
+    - name: Upload regression test results as an artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: regression-test-results
+        path: test/backstop_data/html_report
     
     - name: Create update-hugo branch
       uses: EndBug/add-and-commit@v5
