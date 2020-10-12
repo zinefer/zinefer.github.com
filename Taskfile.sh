@@ -52,13 +52,12 @@ function wait-for {
 function regression {
     ACTION=${1?}
 
-    hugo serve -b host.docker.internal &
+    hugo serve -b host.docker.internal --bind 0.0.0.0 &
     wait-for localhost:1313
     
-    if ip addr show docker0; then
-        HOST_IP="$(ip addr show docker0 | grep -Po 'inet \K[\d.]+')"
-        ADD_HOST_FLAG="--add-host host.docker.internal:$HOST_IP"
-    fi
+    HOST_IP="$(ip route | grep -E '(default|docker0)' | grep -Eo '([0-9]+\.){3}[0-9]+' | tail -1)"
+    ADD_HOST_FLAG="--add-host host.docker.internal:$HOST_IP"
+    echo $ADD_HOST_FLAG
 
     docker run --rm -v $(pwd):/src $ADD_HOST_FLAG \
         backstopjs/backstopjs $ACTION --config=devops/backstopjs/main.js
