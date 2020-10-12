@@ -58,7 +58,9 @@ function regression {
     docker run --rm -v $(pwd):/src \
         backstopjs/backstopjs $ACTION --config=devops/backstopjs/main.js
 
+    RET=$?
     kill %1
+    exit $RET
 }
 
 function deploy {

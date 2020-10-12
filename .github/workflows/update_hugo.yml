@@ -16,7 +16,7 @@ jobs:
       id: versions
       run: |
         wget https://raw.githubusercontent.com/$GITHUB_REPOSITORY/$GITHUB_SHA/.hugoversion
-        NEW=$(curl -s https://api.github.com/repos/gohugoio/hugo/releases/latest | jq -r .name)
+        NEW=$(curl -s https://api.github.com/repos/gohugoio/hugo/releases/latest | jq .name)
         OLD=$(cat .hugoversion)
         echo "::set-output name=new::$NEW"
         echo "::set-output name=old::$OLD"
@@ -51,7 +51,7 @@ jobs:
       env:
         VERSION: ${{ needs.versions.outputs.new }}
       run: |
-        echo $(VERSION) > .hugoversion
+        echo $VERSION > .hugoversion
         ./Taskfile.sh install
         ./Taskfile.sh regression test
 
@@ -59,12 +59,12 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: regression-test-results
-        path: test/backstop_data/html_report
+        path: backstop_data
     
     - name: Create update-hugo branch
       uses: EndBug/add-and-commit@v5
       with:
-        ref: update-hugo
+        branch: update-hugo
         add: .hugoversion
         message: Update Hugo to ${{ needs.versions.outputs.new }}
       env:

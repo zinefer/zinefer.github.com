@@ -36,6 +36,10 @@ module.exports = {
   id: basicConfig.projectId,
   viewports,
   scenarios,
+  paths: {
+    bitmaps_reference: 'backstop_data/bitmaps_reference',
+    bitmaps_test: 'backstop_data/bitmaps_test'
+  },
   report: ["browser", "CI"],
   engine: "puppeteer",
   engineOptions: {
