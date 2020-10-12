@@ -49,6 +49,18 @@ function wait-for {
     fi
 }
 
+function regression {
+    ACTION=${1?}
+
+    hugo serve -b http://host.docker.internal &
+    wait-for localhost:1313
+
+    docker run --rm -v $(pwd):/src \
+        backstopjs/backstopjs $ACTION --config=devops/backstopjs/main.js
+
+    kill %1
+}
+
 function deploy {
     STORAGE_ACCOUNT=${1?}
     DEST="https://$STORAGE_ACCOUNT.blob.core.windows.net/\$web"

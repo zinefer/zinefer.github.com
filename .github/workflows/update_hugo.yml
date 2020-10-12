@@ -34,11 +34,7 @@ jobs:
         submodules: true
     
     - name: Install dependencies
-      env:
-        PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: 'true'
       run: |
-        sudo -E npm install -g backstopjs
-        sudo npm install -g sitemap-urls
         ./Taskfile.sh install
 
     - name: Checkout resources cache
@@ -49,10 +45,7 @@ jobs:
   
     - name: Generate Screenshots for old hugo version
       run: |
-        hugo serve &
-        ./Taskfile.sh wait-for localhost:1313
-        backstop reference --config=devops/backstopjs/main.js --docker
-        kill %1
+        ./Taskfile.sh regression reference
 
     - name: Run regression test against old screenshots
       env:
@@ -60,10 +53,7 @@ jobs:
       run: |
         echo $(VERSION) > .hugoversion
         ./Taskfile.sh install
-        hugo serve &
-        ./Taskfile.sh wait-for localhost:1313
-        backstop test --config=devops/backstopjs/main.js --docker
-        kill %1
+        ./Taskfile.sh regression test
 
     - name: Upload regression test results as an artifact
       uses: actions/upload-artifact@v2
