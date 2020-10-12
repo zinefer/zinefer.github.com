@@ -29,9 +29,10 @@ function wait-for {
     timeout --foreground 300 bash \
 	<<-EOD
 		until [[ "\$RESP" == "$CODE" ]]; do 
-			test "\$RESP" && sleep 1
-			RESP=$(curl -sIL -o /dev/null -w '%{http_code}' $URL | tr -d '\n')
+            [[ \$RESP ]] && sleep 1
+			RESP=\$(curl -sIL -o /dev/null -w '%{http_code}' $URL | tr -d '\n')
 			echo -ne "\$RESP "
+            TRIES=\$(( TRIES + 1 )) && [[ \$(( TRIES % 10 )) == 0 ]] && echo
         done
 	EOD
 
