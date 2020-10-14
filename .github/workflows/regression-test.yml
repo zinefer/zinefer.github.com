@@ -7,15 +7,6 @@ on:
       - master
 
 jobs:
-  label-check:
-    runs-on: ubuntu-latest
-    if: (! contains( github.event.pull_request.labels.*.name, 'regression'))
-    steps:
-    - name: label
-      run: |
-        echo "Pull request does not have a regression label"
-
-
   regression-test:
     runs-on: ubuntu-latest
     if: contains( github.event.pull_request.labels.*.name, 'regression')
@@ -39,11 +30,10 @@ jobs:
     - name: Generate Screenshots for reference
       run: |
         ./Taskfile.sh regression reference
-
-    - name: Checkout repo
-      uses: actions/checkout@v2
-      with:
-        submodules: true
+    
+    - name: Checkout ${{ github.base_ref }}
+      run: |
+        git checkout ${{ github.base_ref }}
 
     - name: Install dependencies
       run: |
