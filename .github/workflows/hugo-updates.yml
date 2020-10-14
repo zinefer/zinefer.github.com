@@ -1,0 +1,65 @@
+name: Check for new Hugo versions
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: 0 0 1,15 * *
+
+jobs:
+  hugo-updates:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check for new hugo version
+      id: versions
+      run: |
+        wget https://raw.githubusercontent.com/$GITHUB_REPOSITORY/$GITHUB_SHA/.hugoversion
+        NEW=$(curl -s https://api.github.com/repos/gohugoio/hugo/releases/latest | jq .name)
+        OLD=$(cat .hugoversion)
+        echo "::set-output name=new::$NEW"
+        echo "::set-output name=old::$OLD"
+        echo "$OLD == $NEW"
+
+    - name: Check if branch already exists
+      id: branch
+      if: steps.versions.outputs.new != steps.versions.outputs.old
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        VERSION: ${{ steps.versions.outputs.new }}
+      run: |
+        EXISTS=$(git ls-remote --heads git@github.com:zinefer/zinefer.github.com.git refs/heads/update-hugo | grep update-hugo | wc -l)
+        echo "::set-output name=exists::$EXISTS"
+        echo "$EXISTS == 0"
+
+
+    - name: Modify .hugoversion
+      if: >
+        steps.branch.outputs.exists == "0" &&
+        steps.versions.outputs.new != steps.versions.outputs.old
+      env:
+        VERSION: ${{ steps.versions.outputs.new }}
+      run: |
+        echo -ne $VERSION > .hugoversion
+
+    - name: Create update-hugo branch
+      if: >
+        steps.branch.outputs.exists == "0" &&
+        steps.versions.outputs.new != steps.versions.outputs.old
+      uses: EndBug/add-and-commit@v5
+      with:
+        branch: hugo-${{ needs.versions.outputs.new }}
+        add: .hugoversion
+        message: Update Hugo to ${{ needs.versions.outputs.new }}
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Create a pull request to update Hugo version
+      if: >
+        steps.branch.outputs.exists == "0" &&
+        steps.versions.outputs.new != steps.versions.outputs.old
+      uses: repo-sync/pull-request@v2
+      with:
+        source_branch: hugo-${{ needs.versions.outputs.new }}
+        pr_title: Update Hugo to ${{ needs.versions.outputs.new }}
+        pr_body: ":crown: Hugo update!"
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        pr_label: regression

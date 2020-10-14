@@ -1,0 +1,88 @@
+name: Check for new Hugo version and regressions  
+
+on:
+  workflow_dispatch:
+  pull_request:
+    branches:
+      - main
+
+env:
+  REGRESSION: ${ contains( github.event.pull_request.labels.*.name, 'regression') }
+
+defaults:
+  runs-on: ubuntu-latest
+
+jobs:
+  label:
+    if: env.REGRESSION != true
+    steps:
+    - name: label
+      run: |
+        echo "Pull request does not have a regression label"
+
+
+  build-reference:
+    if: env.REGRESSION == true
+    steps:
+    - name: Checkout repo
+      uses: actions/checkout@v2
+      with:
+        submodules: true
+        ref: master
+        path: reference
+    
+    - name: Install dependencies
+      working-directory: reference
+      run: |
+        ./Taskfile.sh install
+
+  build-test:
+    if: env.REGRESSION == true
+    steps:
+    - name: Checkout repo
+      uses: actions/checkout@v2
+      with:
+        submodules: true
+        path: test
+
+    - name: Install dependencies
+      working-directory: test
+      run: |
+        ./Taskfile.sh install
+  
+  clone-resources:
+    if: env.REGRESSION == true
+    steps:
+    - name: Checkout resources cache
+      uses: actions/checkout@v2
+      with:
+        ref: resources
+        path: resources
+    
+    - name: Copy resources to reference/test directories
+      run: |
+        ln -s resources reference
+        ln -s resources test
+
+
+  regression-test:
+    needs:
+      - build-reference
+      - build-test
+      - clone-resources
+    steps:
+    - name: Generate Screenshots for reference
+      working-directory: reference
+      run: |
+        ./Taskfile.sh regression reference
+
+    - name: Run regression test
+      working-directory: test
+      run: |
+        ./Taskfile.sh regression test
+
+    - name: Upload regression test results as an artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: regression-test-results
+        path: backstop_data

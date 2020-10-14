@@ -3,12 +3,12 @@
 set -e
 
 VFILE=".hugoversion"
-VERSION=$(cat .hugoversion | jq -r .)
+VERSION=$(cat $VFILE)
 
 echo "Searching for Hugo $VERSION"
 
 URL=`curl -s https://api.github.com/repos/gohugoio/hugo/releases \
-      | jq -r --argfile version .hugoversion \
+      | jq -r --rawfile version $VFILE \
           '.[] 
           | select(.tag_name == $version) 
           | .assets[] 
