@@ -1,4 +1,4 @@
-name: Check for new Hugo version and regressions  
+name: Check for regressions
 
 on:
   workflow_dispatch:
