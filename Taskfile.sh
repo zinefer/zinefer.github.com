@@ -54,6 +54,10 @@ function regression {
 
     hugo serve -b host.docker.internal --bind 0.0.0.0 &
     wait-for localhost:1313
+
+    curl -s http://localhost:1313/sitemap.xml \
+        | npx sitemap --parse \
+        | jq --slurp '. | map(.url) | sort' > devops/backstopjs/urls.json
     
     HOST_IP="$(ip route | grep -E '(default|docker0)' | grep -Eo '([0-9]+\.){3}[0-9]+' | tail -1)"
     ADD_HOST_FLAG="--add-host host.docker.internal:$HOST_IP"

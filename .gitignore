@@ -52,3 +52,5 @@ terraform.rc
 
 # Test ouput
 /backstop_data
+
+devops/backstopjs/urls.json

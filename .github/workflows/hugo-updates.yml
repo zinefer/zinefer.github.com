@@ -25,8 +25,9 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         VERSION: ${{ steps.versions.outputs.new }}
+        BRANCH: hugo-${{ steps.versions.outputs.new }}
       run: |
-        EXISTS=$(git ls-remote --heads git@github.com:zinefer/zinefer.github.com.git refs/heads/update-hugo | grep update-hugo | wc -l)
+        EXISTS=$(git ls-remote --heads git@github.com:zinefer/zinefer.github.com.git refs/heads/$BRANCH | grep $BRANCH| wc -l)
         echo "::set-output name=exists::$EXISTS"
         echo "$EXISTS == 0"
 
