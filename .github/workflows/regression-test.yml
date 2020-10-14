@@ -33,7 +33,7 @@ jobs:
 
     - name: Clean before checking out new code
       run: |
-        git ls-files -z | xargs -0 rm -f
+        git ls-files -z | xargs -r rm -f
         git ls-tree --name-only -d -r -z HEAD | sort -rz | xargs -0 rmdir 
 
     - name: Checkout repo
