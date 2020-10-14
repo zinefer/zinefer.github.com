@@ -11,6 +11,10 @@ jobs:
     runs-on: ubuntu-latest
     if: contains( github.event.pull_request.labels.*.name, 'regression')
     steps:
+    - name: Download backstopjs docker in the background
+      run: |
+        docker pull -q backstopjs/backstopjs &
+
     - name: Checkout repo
       uses: actions/checkout@v2
       with:
@@ -26,6 +30,10 @@ jobs:
     - name: Install dependencies
       run: |
         ./Taskfile.sh install
+
+    - name: Wait for background jobs
+      run: |
+        wait
 
     - name: Generate Screenshots for reference
       run: |
