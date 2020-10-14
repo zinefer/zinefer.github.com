@@ -34,7 +34,6 @@ jobs:
     
     - name: Install dependencies
       run: |
-        jq --help
         ./Taskfile.sh install
 
     - name: Generate Screenshots for reference
