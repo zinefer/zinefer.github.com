@@ -30,6 +30,16 @@ jobs:
     - name: Generate Screenshots for reference
       run: |
         ./Taskfile.sh regression reference
+
+    - name: Clean before checking out new code
+      run: |
+        git ls-files -z | xargs -0 rm -f
+        git ls-tree --name-only -d -r -z HEAD | sort -rz | xargs -0 rmdir 
+
+    - name: Checkout repo
+      uses: actions/checkout@v2
+      with:
+        submodules: true
     
     - name: Checkout ${{ github.head_ref }}
       run: |
@@ -44,6 +54,7 @@ jobs:
         ./Taskfile.sh regression test
 
     - name: Upload regression test results as an artifact
+      if: always()
       uses: actions/upload-artifact@v2
       with:
         name: regression-test-results
