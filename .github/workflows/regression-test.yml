@@ -31,9 +31,9 @@ jobs:
       run: |
         ./Taskfile.sh regression reference
     
-    - name: Checkout ${{ github.base_ref }}
+    - name: Checkout ${{ github.head_ref }}
       run: |
-        git checkout ${{ github.base_ref }}
+        git checkout ${{ github.head_ref }}
 
     - name: Install dependencies
       run: |
