@@ -33,13 +33,10 @@ jobs:
         path: resources
     
     - name: Install dependencies
-      working-directory: reference
       run: |
-        ls -la
         ./Taskfile.sh install
 
     - name: Generate Screenshots for reference
-      working-directory: reference
       run: |
         ./Taskfile.sh regression reference
 
@@ -49,12 +46,10 @@ jobs:
         submodules: true
 
     - name: Install dependencies
-      working-directory: test
       run: |
         ./Taskfile.sh install
 
     - name: Run regression test
-      working-directory: test
       run: |
         ./Taskfile.sh regression test
 
