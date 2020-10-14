@@ -13,7 +13,7 @@ jobs:
       id: versions
       run: |
         wget https://raw.githubusercontent.com/$GITHUB_REPOSITORY/$GITHUB_SHA/.hugoversion
-        NEW=$(curl -s https://api.github.com/repos/gohugoio/hugo/releases/latest | jq .name)
+        NEW=$(curl -s https://api.github.com/repos/gohugoio/hugo/releases/latest | jq -r .name)
         OLD=$(cat .hugoversion)
         echo "::set-output name=new::$NEW"
         echo "::set-output name=old::$OLD"
