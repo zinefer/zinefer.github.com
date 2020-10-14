@@ -8,7 +8,7 @@ VERSION=$(cat $VFILE)
 echo "Searching for Hugo $VERSION"
 
 URL=`curl -s https://api.github.com/repos/gohugoio/hugo/releases \
-      | jq -r --rawfile version $VFILE \
+      | jq -r --arg version $VERSION \
           '.[] 
           | select(.tag_name == $version) 
           | .assets[] 
