@@ -9,6 +9,7 @@ basicConfig.relativeUrls.map(relativeUrl => {
     url: `${basicConfig.baseUrl}${relativeUrl}`,
     delay: ONE_SECONDS_IN_MS,
     requireSameDimensions: false,
+    hideSelectors: ['iframe'],
   });
 });
 
