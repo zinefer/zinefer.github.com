@@ -37,6 +37,7 @@ jobs:
         steps.versions.outputs.new != steps.versions.outputs.old
       uses: actions/checkout@v2
       with:
+        submodules: true
         ref: master
 
     - name: Modify .hugoversion
@@ -48,26 +49,25 @@ jobs:
       run: |
         echo -ne $VERSION > .hugoversion
 
-    - name: Create update-hugo branch
+    - name: Generate token for Pull Request
+      id: generate-token
+      uses: tibdex/github-app-token@v1
       if: >
         steps.branch.outputs.exists == '0' &&
         steps.versions.outputs.new != steps.versions.outputs.old
-      uses: EndBug/add-and-commit@v5
       with:
-        branch: hugo-${{ steps.versions.outputs.new }}
-        add: .hugoversion
-        message: Update Hugo to ${{ steps.versions.outputs.new }}
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        app_id: ${{ secrets.PR_APP_ID }}
+        private_key: ${{ secrets.PR_APP_PRIVATE_KEY }}
 
-    - name: Create a pull request to update Hugo version
+    - name: Create Pull Request
+      uses: peter-evans/create-pull-request@v3
       if: >
         steps.branch.outputs.exists == '0' &&
         steps.versions.outputs.new != steps.versions.outputs.old
-      uses: repo-sync/pull-request@v2
       with:
-        source_branch: hugo-${{ steps.versions.outputs.new }}
-        pr_title: Update Hugo to ${{ steps.versions.outputs.new }}
-        pr_body: ":crown: Hugo update!"
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        pr_label: regression
+        token: ${{ steps.generate-token.outputs.token }}
+        labels: regression
+        branch: hugo-${{ steps.versions.outputs.new }}
+        commit-message: Update Hugo to ${{ steps.versions.outputs.new }}
+        title: Update Hugo to ${{ steps.versions.outputs.new }}
+        body: ":crown: Hugo update!"
