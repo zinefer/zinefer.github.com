@@ -12,7 +12,7 @@ env:
 jobs:
   label:
     runs-on: ubuntu-latest
-    if: env.REGRESSION != true
+    if: (! contains( github.event.pull_request.labels.*.name, 'regression'))
     steps:
     - name: label
       run: |
@@ -21,7 +21,7 @@ jobs:
 
   build-reference:
     runs-on: ubuntu-latest
-    if: env.REGRESSION == true
+    if: contains( github.event.pull_request.labels.*.name, 'regression')
     steps:
     - name: Checkout repo
       uses: actions/checkout@v2
@@ -37,7 +37,7 @@ jobs:
 
   build-test:
     runs-on: ubuntu-latest
-    if: env.REGRESSION == true
+    if: contains( github.event.pull_request.labels.*.name, 'regression')
     steps:
     - name: Checkout repo
       uses: actions/checkout@v2
@@ -52,7 +52,7 @@ jobs:
   
   clone-resources:
     runs-on: ubuntu-latest
-    if: env.REGRESSION == true
+    if: contains( github.event.pull_request.labels.*.name, 'regression')
     steps:
     - name: Checkout resources cache
       uses: actions/checkout@v2
