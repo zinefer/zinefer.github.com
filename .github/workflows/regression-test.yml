@@ -33,8 +33,9 @@ jobs:
 
     - name: Clean before checking out new code
       run: |
-        git ls-files -z | xargs -r rm -f
-        git ls-tree --name-only -d -r -z HEAD | sort -rz | xargs -0 rmdir 
+        git ls-files -z | xargs -0 rm -rf
+        git ls-tree --name-only -d -r -z HEAD | sort -rz | xargs -0 rm -rf 
+        ls -la
 
     - name: Checkout repo
       uses: actions/checkout@v2
