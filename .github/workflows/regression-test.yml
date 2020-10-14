@@ -31,21 +31,11 @@ jobs:
       run: |
         ./Taskfile.sh regression reference
 
-    # - name: Clean before checking out new code
-    #   run: |
-    #     git ls-files -z | xargs -0 rm -rf
-    #     git ls-tree --name-only -d -r -z HEAD | sort -rz | xargs -0 rm -rf 
-    #     ls -la
-
     - name: Checkout repo
       uses: actions/checkout@v2
       with:
         clean: false
         submodules: true
-    
-    - name: Checkout ${{ github.head_ref }}
-      run: |
-        git checkout origin/${{ github.head_ref }}
 
     - name: Install dependencies
       run: |
