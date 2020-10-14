@@ -54,9 +54,9 @@ jobs:
         steps.versions.outputs.new != steps.versions.outputs.old
       uses: EndBug/add-and-commit@v5
       with:
-        branch: hugo-${{ needs.versions.outputs.new }}
+        branch: hugo-${{ steps.versions.outputs.new }}
         add: .hugoversion
-        message: Update Hugo to ${{ needs.versions.outputs.new }}
+        message: Update Hugo to ${{ steps.versions.outputs.new }}
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -66,8 +66,8 @@ jobs:
         steps.versions.outputs.new != steps.versions.outputs.old
       uses: repo-sync/pull-request@v2
       with:
-        source_branch: hugo-${{ needs.versions.outputs.new }}
-        pr_title: Update Hugo to ${{ needs.versions.outputs.new }}
+        source_branch: hugo-${{ steps.versions.outputs.new }}
+        pr_title: Update Hugo to ${{ steps.versions.outputs.new }}
         pr_body: ":crown: Hugo update!"
         github_token: ${{ secrets.GITHUB_TOKEN }}
         pr_label: regression
