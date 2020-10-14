@@ -6,84 +6,55 @@ on:
     branches:
       - master
 
-env:
-  REGRESSION: ${ contains( github.event.pull_request.labels.*.name, 'regression') }
-
 jobs:
-  label:
+  regression-test:
     runs-on: ubuntu-latest
-    if: env.REGRESSION != true
+    if: contains( github.event.pull_request.labels.*.name, 'regression')
     steps:
-    - name: label
+    - name: Download backstopjs docker in the background
       run: |
-        echo "Pull request does not have a regression label"
+        docker pull -q backstopjs/backstopjs &
 
-
-  build-reference:
-    runs-on: ubuntu-latest
-    if: env.REGRESSION == true
-    steps:
     - name: Checkout repo
       uses: actions/checkout@v2
       with:
         submodules: true
         ref: master
-        path: reference
     
-    - name: Install dependencies
-      working-directory: reference
-      run: |
-        ./Taskfile.sh install
-
-  build-test:
-    runs-on: ubuntu-latest
-    if: env.REGRESSION == true
-    steps:
-    - name: Checkout repo
-      uses: actions/checkout@v2
-      with:
-        submodules: true
-        path: test
-
-    - name: Install dependencies
-      working-directory: test
-      run: |
-        ./Taskfile.sh install
-  
-  clone-resources:
-    runs-on: ubuntu-latest
-    if: env.REGRESSION == true
-    steps:
     - name: Checkout resources cache
       uses: actions/checkout@v2
       with:
         ref: resources
         path: resources
     
-    - name: Copy resources to reference/test directories
+    - name: Install dependencies
       run: |
-        ln -s resources reference
-        ln -s resources test
+        ./Taskfile.sh install
 
+    - name: Wait for background jobs
+      run: |
+        wait
 
-  regression-test:
-    runs-on: ubuntu-latest
-    needs:
-      - build-reference
-      - build-test
-      - clone-resources
-    steps:
     - name: Generate Screenshots for reference
-      working-directory: reference
       run: |
         ./Taskfile.sh regression reference
 
+    - name: Checkout repo
+      uses: actions/checkout@v2
+      with:
+        clean: false
+        submodules: true
+
+    - name: Install dependencies
+      run: |
+        ./Taskfile.sh install
+
     - name: Run regression test
-      working-directory: test
       run: |
         ./Taskfile.sh regression test
 
     - name: Upload regression test results as an artifact
+      if: always()
       uses: actions/upload-artifact@v2
       with:
         name: regression-test-results
