@@ -59,7 +59,7 @@ yarn add vue vue-loader vue-router vue-template-compiler
 
 The resolve alias is for cleaner import statements in our application.js file later on.
 
-{{< highlight javascript "hl_lines=2 10 20 32-35" >}}
+```js {hl_lines=[2,10,20,"32-35"]}
 // ...
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 // ...
@@ -101,7 +101,7 @@ const configurator = {
   }
 }
 // ...
-{{</highlight>}}
+```
 
 <br/>
 
@@ -113,7 +113,7 @@ We are going to replace the generated front-end with a Vue app that has a single
 
 Add a route to access the Vue app
 
-{{< highlight golang "hl_lines=5" >}}
+```golang {hl_lines=[5]}
 // ...
 func App() *buffalo.App {
   if app == nil {
@@ -125,7 +125,7 @@ func App() *buffalo.App {
   // ...
 }
 // ...
-{{</highlight>}}
+```
 
 Some tutorials recommend using `app.GET("/{path:.+}", HomeHandler)` to capture all requests and send them to the Vue app. Due to the way `ServeFiles` works (I think this was changed at some point but was unable to find the version it happened) you can't really have a catch all route off the index. One way to get around this would be to nest your application in a path like `"/app/{path:.+}"`. This is probably a fine solution but I care about my urls too much so for this guide we will create a more verbose routes list than we would normally have to with Buffalo.
 
@@ -179,7 +179,7 @@ export default {
 
 ## Modify assets/js/application.js
 
-{{< highlight javascript "hl_lines=4-6 10-23" >}}
+```js {hl_lines=["4-6","10-23"]}
 require("expose-loader?$!expose-loader?jQuery!jquery");
 require("bootstrap/dist/js/bootstrap.bundle.js");
 
@@ -205,7 +205,7 @@ $(() => {
   }).$mount("#app");
 
 });
-{{</highlight>}}
+```
 
 At this point your tests should pass with `buffalo test` and you can access your Vue app via `buffalo dev`.
 
@@ -221,7 +221,7 @@ yarn add --dev jest vue-jest babel-core@bridge @vue/test-utils
 
 Configure Jest.
 
-{{< highlight javascript "hl_lines=5 8-14" >}}
+```js {hl_lines=[5,"8-14"]}
 {
   // ...
   "scripts": {
@@ -237,7 +237,7 @@ Configure Jest.
     }
   }
 }
-{{</highlight>}}
+```
 
 ## Create assets/js/test/unit/home.spec.js
 
@@ -377,7 +377,7 @@ yarn add --dev coveralls
 
 ## Modify .travis.yml
 
-{{< highlight yaml "hl_lines=5-6 10-12" >}}
+```yaml {hl_lines=["5-6","10-12"]}
 # ...
 
 before_script:
@@ -390,4 +390,4 @@ before_script:
 after_script:
   - $GOPATH/bin/goveralls -coverprofile=c.out -service=travis-ci
   - cat ./coverage/lcov.info | yarn run coveralls
-{{</highlight>}}
+```

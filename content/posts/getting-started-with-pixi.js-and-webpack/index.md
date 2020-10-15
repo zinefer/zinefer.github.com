@@ -29,7 +29,7 @@ npm install webpack webpack-cli webpack-dev-server --save-dev
 
 Add a `build` and `start` script to your `package.json`
 
-{{< highlight json "hl_lines=8-9" >}}
+```json {hl_lines=["8-9"]}
 {
   "name": "pixijs-demo",
   "version": "1.0.0",
@@ -49,7 +49,7 @@ Add a `build` and `start` script to your `package.json`
     "webpack-dev-server": "^3.2.1"
   }
 }
-{{< / highlight >}}
+```
 
 Create `webpack.config.js`:
 
@@ -79,7 +79,7 @@ npm install clean-webpack-plugin html-webpack-plugin copy-webpack-plugin --save-
 
 Configure the plugins in `webpack.config.js`
 
-{{< highlight javascript "hl_lines=2-4 9-15" >}}
+```js {hl_lines=["2-4","9-15"]}
 const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -101,7 +101,7 @@ module.exports = {
     path: path.resolve(__dirname, 'dist')
   }
 };
-{{< / highlight >}}
+```
 
 ## Install Pixi.js
 
