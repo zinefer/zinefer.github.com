@@ -3,19 +3,19 @@ name: Check for regressions
 on:
   workflow_dispatch:
   pull_request:
-    branches:
-      - master
+    types: [ labeled, synchronize, reopened ]
+    branches: [ master ]
 
 jobs:
   regression-test:
     runs-on: ubuntu-latest
-    if: contains( github.event.pull_request.labels.*.name, 'regression')
+    if: contains( github.event.pull_request.labels.*.name, 'test-for-regression')
     steps:
     - name: Download backstopjs docker in the background
       run: |
         docker pull -q backstopjs/backstopjs &
 
-    - name: Checkout repo
+    - name: Checkout repo at master
       uses: actions/checkout@v2
       with:
         submodules: true
@@ -39,7 +39,7 @@ jobs:
       run: |
         ./Taskfile.sh regression reference
 
-    - name: Checkout repo
+    - name: Checkout repo at ${{ github.base_ref }}
       uses: actions/checkout@v2
       with:
         clean: false

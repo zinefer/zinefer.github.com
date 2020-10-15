@@ -67,7 +67,7 @@ jobs:
         steps.versions.outputs.new != steps.versions.outputs.old
       with:
         token: ${{ steps.generate-token.outputs.token }}
-        labels: regression
+        labels: test-for-regression
         branch: hugo-${{ steps.versions.outputs.new }}
         commit-message: Update Hugo to ${{ steps.versions.outputs.new }}
         title: Update Hugo to ${{ steps.versions.outputs.new }}
