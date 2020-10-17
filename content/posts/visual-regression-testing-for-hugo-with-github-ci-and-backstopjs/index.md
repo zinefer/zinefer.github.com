@@ -296,3 +296,4 @@ jobs:
 A couple of advanced things to try with this workflow:
 - Only run the pipeline when the pullrequest has a particular label
 - Run a docker pull for `backstop/backstopjs` in the background and `wait` for it to finish before reference
+- Store your compiled resources in a separate branch to speed up builds
