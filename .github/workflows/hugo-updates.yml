@@ -19,56 +19,57 @@ jobs:
         echo "::set-output name=old::$OLD"
         echo "$OLD == $NEW"
 
-    - name: Check if branch already exists
-      id: branch
-      if: steps.versions.outputs.new != steps.versions.outputs.old
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        VERSION: ${{ steps.versions.outputs.new }}
-        BRANCH: hugo-${{ steps.versions.outputs.new }}
-      run: |
-        EXISTS=$(git ls-remote --heads git@github.com:zinefer/zinefer.github.com.git refs/heads/$BRANCH | grep $BRANCH| wc -l)
-        echo "::set-output name=exists::$EXISTS"
-        echo "$EXISTS == 0"
-
 
     - name: Checkout repo
-      if: >
-        steps.branch.outputs.exists == '0' &&
-        steps.versions.outputs.new != steps.versions.outputs.old
+      if: steps.versions.outputs.new != steps.versions.outputs.old
       uses: actions/checkout@v2
       with:
         submodules: true
         ref: master
 
     - name: Modify .hugoversion
-      if: >
-        steps.branch.outputs.exists == '0' &&
-        steps.versions.outputs.new != steps.versions.outputs.old
+      if: steps.versions.outputs.new != steps.versions.outputs.old
       env:
         VERSION: ${{ steps.versions.outputs.new }}
       run: |
         echo -ne $VERSION > .hugoversion
 
+    - name: Get hugo release notes
+      id: release
+      if: steps.versions.outputs.new != steps.versions.outputs.old
+      env:
+        VERSION: ${{ steps.versions.outputs.new }}
+      run: |
+        RELEASE_NOTES="$(
+          curl -s https://api.github.com/repos/gohugoio/hugo/releases \
+            | jq -r --arg version $VERSION \
+                '.[] | select(.tag_name == $version) | .body'
+        )"
+        # Escape \n, \r and %
+        RELEASE_NOTES="${RELEASE_NOTES//'%'/'%25'}"
+        RELEASE_NOTES="${RELEASE_NOTES//$'\n'/'%0A'}"
+        RELEASE_NOTES="${RELEASE_NOTES//$'\r'/'%0D'}"
+        echo "::set-output name=notes::$RELEASE_NOTES"
+
     - name: Generate token for Pull Request
       id: generate-token
       uses: tibdex/github-app-token@v1
-      if: >
-        steps.branch.outputs.exists == '0' &&
-        steps.versions.outputs.new != steps.versions.outputs.old
+      if: steps.versions.outputs.new != steps.versions.outputs.old
       with:
         app_id: ${{ secrets.PR_APP_ID }}
         private_key: ${{ secrets.PR_APP_PRIVATE_KEY }}
 
     - name: Create Pull Request
       uses: peter-evans/create-pull-request@v3
-      if: >
-        steps.branch.outputs.exists == '0' &&
-        steps.versions.outputs.new != steps.versions.outputs.old
+      if: steps.versions.outputs.new != steps.versions.outputs.old
       with:
         token: ${{ steps.generate-token.outputs.token }}
         labels: test-for-regression
         branch: hugo-${{ steps.versions.outputs.new }}
         commit-message: Update Hugo to ${{ steps.versions.outputs.new }}
         title: Update Hugo to ${{ steps.versions.outputs.new }}
-        body: ":crown: Hugo update!"
+        body: |
+          :crown: Hugo update!
+
+          # ${{ steps.versions.outputs.new }} Release Notes
+          ${{ steps.release.outputs.notes }}
