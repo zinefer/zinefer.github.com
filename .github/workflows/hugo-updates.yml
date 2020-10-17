@@ -12,8 +12,8 @@ jobs:
     - name: Check for new hugo version
       id: versions
       run: |
-        wget https://raw.githubusercontent.com/$GITHUB_REPOSITORY/$GITHUB_SHA/.hugoversion
         NEW=$(curl -s https://api.github.com/repos/gohugoio/hugo/releases/latest | jq -r .name)
+        wget https://raw.githubusercontent.com/$GITHUB_REPOSITORY/$GITHUB_SHA/.hugoversion
         OLD=$(cat .hugoversion)
         echo "::set-output name=new::$NEW"
         echo "::set-output name=old::$OLD"

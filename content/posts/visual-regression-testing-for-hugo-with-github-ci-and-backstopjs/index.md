@@ -8,7 +8,7 @@ tags = ["Github Actions", "BackstopJS", "Docker", "Automation", "Hugo", "Bash"]
 
 Visual Regression testing is usually accomplished by building two different versions of a website, taking screenshots of all of it's pages and then comparing them for visual differences. This is a fairly old topic with [projects](https://github.com/mojoaxel/awesome-regression-testing) going back nearly a decade. While many are deprecated or archived it's probably never been easier to automate screenshots from a browser thanks to first class automation support from Chrome.
 
-After setting out to finally automate this and doing some research it seems there are some fairly mature and popular SaaS solutions that I could have used like [percy](http://percy.io) which appears to have a free tier and even uses Hugo as an [example](https://docs.percy.io/docs/snapshot-cli-command) in some of their docs. However, I wanted to accomplish this myself with [Github Actions](https://docs.github.com/en/free-pro-team@latest/actions/quickstart) so I continued digging until I came across [BackstopJS](https://github.com/garris/BackstopJS).
+After setting out to finally automate this and doing some research it seems there are some fairly mature and popular SaaS solutions that I could have used like [percy](http://percy.io) which appears to have a free tier and even uses [Hugo](https://gohugo.io/) as an [example](https://docs.percy.io/docs/snapshot-cli-command) in some of their docs. However, I wanted to accomplish this myself with [Github Actions](https://docs.github.com/en/free-pro-team@latest/actions/quickstart) so I continued digging until I came across [BackstopJS](https://github.com/garris/BackstopJS).
 
 Using this tooling, the following procedure should suffice:
 - Checkout master branch
@@ -136,7 +136,7 @@ The [Taskfile](https://github.com/adriancooney/Taskfile) pattern is great for or
 
 ### Hugo installer helper
 
-We're going to be building the website with two different hugo versions so having a script that can install a specific version of hugo for us would be very helpful. Leaning on my past [post]({{< ref "/posts/install-latest-hugo-on-ubuntu-debian" >}}), here's what I came up with:
+We're going to be building the website with two different hugo versions so having a script that can install a specific version of hugo for us would be very helpful. Leaning on my past post about a [hugo install command]({{< ref "/posts/install-latest-hugo-on-ubuntu-debian" >}}), here's what I came up with:
 
 Create `install-hugo.sh`
 ```sh
