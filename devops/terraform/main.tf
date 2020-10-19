@@ -1,10 +1,10 @@
-locals {
-  clean_lets_encrypt_azure = replace(var.lets_encrypt_azure, "-", "")
-}
-
 provider "azurerm" {
   version = "~> 2.4.0" # https://github.com/terraform-providers/terraform-provider-azurerm/issues/1109
   features {}
+}
+
+locals {
+  clean_lets_encrypt_azure = replace(var.lets_encrypt_azure, "-", "")
 }
 
 data "azurerm_client_config" "current" {}

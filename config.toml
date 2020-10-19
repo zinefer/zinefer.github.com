@@ -1,4 +1,4 @@
-baseURL = "//jameskiefer.com/"
+baseURL = "https://jameskiefer.com/"
 languageCode = "en-us"
 title = "James Kiefer"
 
@@ -18,7 +18,7 @@ timeout = 300000
 [params]
   author = "James Kiefer"
   publisher = "James Kiefer"
-  publisherLogo = "http://jameskiefer.com/logo.png"
+  publisherLogo = "https://jameskiefer.com/logo.png"
   portrait = "img/portrait.jpg"
   description = "Release Engineer, Software Developer, Maker and Drone Pilot"
 

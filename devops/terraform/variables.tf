@@ -4,7 +4,7 @@ variable "location" {
 }
 
 variable "site" {
-  type = "string"
+  type = string
 }
 
 variable "lets_encrypt_azure" {
