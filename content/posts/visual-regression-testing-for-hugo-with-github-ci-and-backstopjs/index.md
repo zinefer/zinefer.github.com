@@ -255,6 +255,7 @@ name: Check for regressions
 on:
   workflow_dispatch:
   pull_request:
+    types: [ labeled, synchronize, reopened ]
     branches: [ master ]
 
 jobs:
