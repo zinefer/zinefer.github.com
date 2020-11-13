@@ -45,7 +45,7 @@ jobs:
         version: v10
         creds: ${{ secrets.AZURE_RBAC_CREDENTIALS }}
 
-    - uses: azure/login@v1.1
+    - uses: azure/login@v1
       with:
         creds: ${{ secrets.AZURE_RBAC_CREDENTIALS }}
     
