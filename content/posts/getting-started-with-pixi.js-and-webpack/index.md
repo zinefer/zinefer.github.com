@@ -38,15 +38,15 @@ Add a `build` and `start` script to your `package.json`
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
-    "start": "webpack-dev-server"
+    "start": "webpack serve"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "webpack": "^4.29.5",
-    "webpack-cli": "^3.2.3",
-    "webpack-dev-server": "^3.2.1"
+    "webpack": "^5.5.1",
+    "webpack-cli": "^4.2.0",
+    "webpack-dev-server": "^3.11.0"
   }
 }
 ```
@@ -92,9 +92,11 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'Pixi.js Demo'
     }),
-    new CopyPlugin([
-      { from: 'src/assets', to: 'assets' },
-    ])
+    new CopyPlugin({
+        patterns: [
+            { from: 'src/assets', to: 'assets' },
+        ]
+    })
   ],
   output: {
     filename: 'main.js',
