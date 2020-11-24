@@ -40,7 +40,7 @@ jobs:
       run: rm -rf public/.git
 
     - name: Install azcopy
-      uses: zinefer/install-azcopy-action@v1
+      uses: zinefer/install-azcopy-action@v1.0.2
       with:
         version: v10
 
