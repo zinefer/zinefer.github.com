@@ -43,6 +43,7 @@ jobs:
       uses: zinefer/install-azcopy-action@v1
       with:
         version: v10
+        creds: ${{ secrets.AZURE_RBAC_CREDENTIALS }}
 
     - uses: azure/login@v1
       with:
