@@ -37,7 +37,7 @@ After a few tries I figured out what color and technique I wanted to use. Then I
   {{< mosaic "3x1" "20200913_165729.jpg" "20200913_201014.jpg" "20200920_103727.jpg" "20201022_164529.jpg" >}}
 </center>
 
-Going into this I was pretty sure I was going to prefer a dark stain. I applied it to one of the test halves and was rather dissatisfied. After a bit of research I realized that a lot of what was happening was that the soft wood I was using here was soaking up the stain unevenly and woodworkers recommend using a wood preconditioner (thinned varnish) on soft woods like this birch plywood here. After learning that and trying out a Colonial Maple stain I knew which way I wanted to go.
+Going into this I was pretty sure I was going to prefer a dark stain. I applied it to one of the test halves and was rather dissatisfied. After a bit of research I realized that a lot of what was happening was that the soft wood I was using here was soaking up the stain unevenly and woodworkers recommend using a wood pre-conditioner (thinned varnish) on soft woods like this birch plywood here. After learning that and trying out a Colonial Maple stain I knew which way I wanted to go.
 
 <center>
   {{< mosaic "3x1" "20201022_171159.jpg" "20201022_205522.jpg" "20201022_205529.jpg" "20201022_213227.jpg" >}}
@@ -49,7 +49,7 @@ Routing the edges and applying the finish went fast. Then I was onto one of the 
   {{< image "20201023_170432.jpg" "Resize" "700x" />}}
 </center>
 
-This went reasonably well but during the test pours I had a significantly smaller job (for some reason I did all these pours on all 4 pieces at once) to do so keeping spills to a minimum was much easier. Also, it took two pours due to the epoxy soaking into the wood and missing a couple spots due to racing the epoxy time limit. Which left me with this very scary mess:
+This went reasonably well but during the test pours I had a significantly smaller job (for some reason I did all these pours on all 4 pieces at once) to do so keeping spills to a minimum was much easier. Also, it took two pours due to the epoxy soaking into the wood and missing a couple spots because I was racing the epoxy time limit. All of which left me with this very scary mess:
 
 <center>
   {{< image "20201025_160446.jpg" "Resize" "700x" />}}
@@ -64,7 +64,7 @@ Unfortunately, this left the top very not flat and it took a marathon of wet san
   {{< image "20201116_224737.jpg" "Resize" "325x" />}}
 </center>
 
-For this project I have a new workshop mark! I lasered it onto the back of the tables and used brown shoe polish to increase the contrast. I also coated the sides and back with a spray glossy on polyurethane. Multiple coats with sanding in between. This project was mostly sanding.
+For this project I have a new workshop mark! I lasered it onto the back of the tables and used brown shoe polish to increase the contrast. I also coated the sides and back with a glossy spray on polyurethane. Multiple coats with sanding in between. This project was mostly sanding.
 
 <center>
   {{< mosaic "2x1" "20201206_142317.jpg" "20201209_083437.jpg" "20201216_220611.jpg" >}}
