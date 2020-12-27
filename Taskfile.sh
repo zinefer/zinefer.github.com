@@ -2,6 +2,7 @@
 
 GH='/usr/local/bin/gh'
 BAD_WORDS=(cialis amoxicillin)
+CONTENT_PATH='content'
 
 function install {
     ./devops/scripts/install-hugo.sh
@@ -92,8 +93,43 @@ function clean-prs {
 }
 
 function compress-videos {
-    for i in content/posts/$1/*.mp4; do 
+    NAME=${1?}
+
+    if [ -d "${CONTENT_PATH}/posts/${NAME}" ]; then
+        VPATH="${CONTENT_PATH}/posts/${NAME}"
+    elif [ -d "${CONTENT_PATH}/projects/${NAME}" ]; then
+        VPATH="${CONTENT_PATH}/projects/${NAME}"
+    fi
+
+    for i in $VPATH/*.mp4; do 
         ffmpeg -y -i "$i" -c:v libx264 -crf 20 "${i%.*}_compress.mp4";
+    done
+}
+
+function remove-extras {
+    NAME=${1?}
+    IGNORED="index.md thumb.jpg thumb.png"
+
+    if [ -d "${CONTENT_PATH}/posts/${NAME}" ]; then
+        VPATH="${CONTENT_PATH}/posts/${NAME}"
+    elif [ -d "${CONTENT_PATH}/projects/${NAME}" ]; then
+        VPATH="${CONTENT_PATH}/projects/${NAME}"
+    fi
+
+    mkdir "${VPATH}/unused"
+
+    for i in $VPATH/*; do
+
+        local FILE="${i##*/}"
+
+        if [[ " $IGNORED " =~ .*\ $FILE\ .* ]] || [ -d "${i}" ]; then
+            continue;
+        fi
+
+        if ! grep -q "${FILE%.*}" "${VPATH}/index.md"; then
+            mv "${i}" "${VPATH}/unused"
+        fi
+
     done
 }
 
@@ -101,7 +137,7 @@ function new {
     TYPE=${1?}
     NAME=${2}
 
-    if [ ! -d "content/$TYPE" ]; then
+    if [ ! -d "${CONTENT_PATH}/${TYPE}" ]; then
         NAME=$TYPE
         TYPE=posts
     fi
