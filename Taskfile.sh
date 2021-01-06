@@ -13,7 +13,7 @@ function build {
     hugo --minify
 
     # Sometimes the spookfest.js is missing??
-    if cat public/index.html | grep -q spookfest ; then
+    if cat public/index.html | grep -q "spookfest.js" ; then
         echo "Spookfest included"
     else
         echo "Spookfest not found"
