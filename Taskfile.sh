@@ -11,6 +11,14 @@ function install {
 
 function build {
     hugo --minify
+
+    # Sometimes the spookfest.js is missing??
+    if cat public/index.html | grep -q spookfest ; then
+        echo "Spookfest included"
+    else
+        echo "Spookfest not found"
+        exit 1
+    fi
 }
 
 function wait-for {
