@@ -21,6 +21,12 @@ timeout = 300000
   publisherLogo = "https://jameskiefer.com/logo.png"
   portrait = "img/portrait.jpg"
   description = "Release Engineer, Software Developer, Maker and Drone Pilot"
+  seoDescription = "An American Release Engineer, Software Developer, Maker and Drone Pilot"
+  tags = [
+    "James Kiefer", "Software Developer", "Maker", "Drone Pilot", "Release Engineer",
+    "DIY Ideas", "CNC Projects", "Laser Projects", "3D Printing", "Linux", "CAD", 
+    "Electronics", "R/C"
+  ]
 
 [params.staticman]
   username = "zinefer"
