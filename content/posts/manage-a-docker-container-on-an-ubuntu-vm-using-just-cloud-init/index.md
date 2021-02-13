@@ -8,7 +8,7 @@ tags = ["System Administration", "Docker", "Cloud-Init"]
 
 There are times when you might want to host a [Docker](https://www.docker.com/) container but a [managed app service](https://azure.microsoft.com/en-us/services/app-service/) isn't sufficient and a full blown [Kubernetes](https://kubernetes.io/) cluster would be overkill.
 
-For a situation like this, hosting the container on a standard [Virtual Machine](https://en.wikipedia.org/wiki/Virtual_machine) could be just the solution. It's an extremely easy and lightweight solution to bootstrapping the virtual machine with [Cloud-Init](https://cloud-init.io/) which might normally be done with a tool like [Ansible](https://www.ansible.com/) or [Chef](https://www.chef.io/).
+For a situation like this, hosting the container on a standard [Virtual Machine](https://en.wikipedia.org/wiki/Virtual_machine) could be just the solution. It's an extremely easy and lightweight to bootstrap the virtual machine with [Cloud-Init](https://cloud-init.io/) which might normally be done with a tool like [Ansible](https://www.ansible.com/) or [Chef](https://www.chef.io/).
 
 <hr/>
 <br/>
