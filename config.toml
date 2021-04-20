@@ -31,5 +31,7 @@ timeout = 300000
 [params.staticman]
   username = "zinefer"
   repository = "zinefer.github.com"
+  gitprovider = "github"
   branch = "master"
+  baseurl = "staticman-owl.herokuapp.com"
   notifications = false
