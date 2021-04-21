@@ -39,8 +39,10 @@ module.exports = {
   scenarios,
   paths: {
     bitmaps_reference: 'backstop_data/bitmaps_reference',
-    bitmaps_test: 'backstop_data/bitmaps_test'
+    bitmaps_test: 'backstop_data/bitmaps_test',
+    engine_scripts: 'devops/backstopjs/scripts'
   },
+  onReadyScript: 'onready.js',
   report: ["browser", "CI"],
   engine: "puppeteer",
   engineOptions: {

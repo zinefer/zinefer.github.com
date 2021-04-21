@@ -9,53 +9,55 @@ on:
 jobs:
   regression-test:
     runs-on: ubuntu-latest
-    if: contains( github.event.pull_request.labels.*.name, 'test-for-regression')
+    if: > 
+      github.event_name == 'workflow_dispatch' ||
+      contains( github.event.pull_request.labels.*.name, 'test-for-regression')
     steps:
-    - name: Download backstopjs docker in the background
-      run: |
-        docker pull -q backstopjs/backstopjs &
+      - name: Download backstopjs docker in the background
+        run: |
+          docker pull -q backstopjs/backstopjs &
 
-    - name: Checkout repo at master
-      uses: actions/checkout@v2
-      with:
-        submodules: true
-        ref: master
-    
-    - name: Checkout resources cache
-      uses: actions/checkout@v2
-      with:
-        ref: resources
-        path: resources
-    
-    - name: Install dependencies
-      run: |
-        ./Taskfile.sh install
+      - name: Checkout repo at master
+        uses: actions/checkout@v2
+        with:
+          submodules: true
+          ref: master
 
-    - name: Wait for background jobs
-      run: |
-        wait
+      - name: Checkout resources cache
+        uses: actions/checkout@v2
+        with:
+          ref: resources
+          path: resources
 
-    - name: Generate Screenshots for reference
-      run: |
-        ./Taskfile.sh regression reference
+      - name: Install dependencies
+        run: |
+          ./Taskfile.sh install
 
-    - name: Checkout repo at ${{ github.base_ref }}
-      uses: actions/checkout@v2
-      with:
-        clean: false
-        submodules: true
+      - name: Wait for background jobs
+        run: |
+          wait
 
-    - name: Install dependencies
-      run: |
-        ./Taskfile.sh install
+      - name: Generate Screenshots for reference
+        run: |
+          ./Taskfile.sh regression reference
 
-    - name: Run regression test
-      run: |
-        ./Taskfile.sh regression test
+      - name: Checkout repo at ${{ github.base_ref }}
+        uses: actions/checkout@v2
+        with:
+          clean: false
+          submodules: true
 
-    - name: Upload regression test results as an artifact
-      if: always()
-      uses: actions/upload-artifact@v2
-      with:
-        name: regression-test-results
-        path: backstop_data
+      - name: Install dependencies
+        run: |
+          ./Taskfile.sh install
+
+      - name: Run regression test
+        run: |
+          ./Taskfile.sh regression test
+
+      - name: Upload regression test results as an artifact
+        if: always()
+        uses: actions/upload-artifact@v2
+        with:
+          name: regression-test-results
+          path: backstop_data
