@@ -1,5 +1,4 @@
 const basicConfig = require("./basic");
-const ONE_SECONDS_IN_MS = 1000;
 const scenarios = [];
 const viewports = [];
 
@@ -7,7 +6,6 @@ basicConfig.relativeUrls.map(relativeUrl => {
   scenarios.push({
     label: relativeUrl,
     url: `${basicConfig.baseUrl}${relativeUrl}`,
-    delay: ONE_SECONDS_IN_MS,
     requireSameDimensions: false,
     hideSelectors: ['iframe'],
   });
@@ -39,8 +37,10 @@ module.exports = {
   scenarios,
   paths: {
     bitmaps_reference: 'backstop_data/bitmaps_reference',
-    bitmaps_test: 'backstop_data/bitmaps_test'
+    bitmaps_test: 'backstop_data/bitmaps_test',
+    engine_scripts: 'devops/backstopjs/scripts'
   },
+  onReadyScript: 'onready.js',
   report: ["browser", "CI"],
   engine: "puppeteer",
   engineOptions: {
