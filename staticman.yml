@@ -86,3 +86,10 @@ comments:
 
     # reCaptcha secret
     #secret: ""
+  
+  akismet:
+    enabled: true
+    author: "name"
+    authorEmail: "email"
+    content: "body"
+    type: "comment"
