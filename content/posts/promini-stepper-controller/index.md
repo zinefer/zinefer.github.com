@@ -24,8 +24,7 @@ I was running things off two separated power rails here and forgot about it afte
 For power I have 29V DC so I need something that can step that down. I found two buck modules that I found interesting. One based on the [LM2596](http://www.oddwires.com/lm2596-dc-dc-buck-converter-module-power-supply-output-fixed-5v/) and one on [MP1584](https://www.amazon.com/gp/product/B077TC3812/). I went with the MP1584 even though the listed maximum input voltage is 28V. I looked at the [datasheet](MP1584_r1.0.pdf) for the MP1584 and found that it lists an absolute maximum input voltage of 30 and I am not going to need anywhere near 3A to power a promini and the logic rails of the A4988.
 
 <center>
-  {{< image "20180920_163738.jpg" "Fill" "325x245" />}}
-  {{< image "20180920_164032.jpg" "Resize" "325x" />}}
+  {{< mosaic "1x1" "20180920_163738.jpg" "20180920_164032.jpg" >}}
 </center>
 
 I did some testing on the bench with this setup and it seems to perform pretty well, driving the stepper motor for far longer periods of time than I will require for this project. The capacitor recommended by the A4988 product page is pretty neccesary.
@@ -57,8 +56,7 @@ I normally build my circuit prototypes by bridging traces on a proto-pcb. For th
 # Finished
 
 <center>
-  {{< image "20180921_141239.jpg" "Fill" "325x245" />}}
-  {{< image "thumb.jpg" "Resize" "325x" />}}
+  {{< mosaic "1x1" "20180921_141239.jpg" "thumb.jpg" >}}
 </center>
 
 # Illuminated Automotive Switch

@@ -7,8 +7,7 @@ tags = ["3D Printing", "Timelapse"]
 +++
 
 <center>
-  {{< image "20200727_101143.jpg" "Resize" "x244" />}}
-  {{< image "20200727_190303.jpg" "Resize" "325x" />}}
+  {{< mosaic "1x1" "20200727_101143.jpg" "20200727_190303.jpg" >}}
 </center>
 
 I did have this quite unfortunate layer shift. Unsure what caused it even looking back over both timelapses.

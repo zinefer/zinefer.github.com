@@ -15,8 +15,7 @@ tags = ["CNC Routing", "Fusion 360"]
 It took a few tries before I found a width spacer size that worked well.
 
 <center>
-  {{< image "20200831_225749.jpg" "Resize" "325x" />}}
-  {{< image "20200831_223808.jpg" "Resize" "325x" />}}
+  {{< mosaic "1x1" "20200831_225749.jpg" "20200831_223808.jpg" >}}
 </center>
 
 I used some threaded inserts and cut one side of the bracket out to create some leave-in hardware.

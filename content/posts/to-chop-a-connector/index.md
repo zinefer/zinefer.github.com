@@ -21,8 +21,7 @@ I almost cut the connector off and started soldering but then I thought better o
 I iterate a bit too much...
 
 <center>
-  {{< image "fusion360.png" "Fit" "350x225 center" />}}
-  {{< image "simplify3d.png" "Fit" "350x225 center" />}}
+  {{< mosaic "1x1" "fusion360.png" "simplify3d.png" >}}
 </center>
 
 <center>

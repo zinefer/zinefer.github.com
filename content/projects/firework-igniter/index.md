@@ -23,8 +23,7 @@ It took forever to whittle those clothespins and they really came out nice. Unfo
 This is the main box. It has a 5v 16mhz ProMini, 12/5v 2a power supply and 2 10F 2.5v super capacitors. These 4 RCA inputs allow an external button to fire each relay individually. When nothing is plugged in they are all routed to the red button under the toggle switch
 
 <center>
-  {{< image "relaybox1.jpg" Resize "350x" />}}
-  {{< image "relaybox2.jpg" Resize "350x" />}}
+  {{< mosaic "1x1" "relaybox1.jpg" "relaybox2.jpg" >}}
 </center>
 
 When the input is fired the arduino closes the associated relay in this smaller box giving 4 of the DC barrel jacks 5V.

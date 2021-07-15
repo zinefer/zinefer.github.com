@@ -15,15 +15,13 @@ Recently I was asked by [Julia Williams](http://designosaur.work/) to help out w
 # The issue
 
 <center>
-  {{< image "20190320_162212.jpg" "Resize" "325x" />}}
-  {{< image "ramsayzoom.png" "Fill" "325x244" />}}
+  {{< mosaic "1x1" "20190320_162212.jpg" "ramsayzoom.png" >}}
 </center>
 
 As you can see, my first run had some pretty obvious errors. My first impression was that I was losing steps so I tried to remove all the extra appliances from the circuit to see if that increased accuracy. Also, due to the way my laser operates, I can issue a pulse at origin, start the program and then when it is finished it will attempt to return to the origin where I can pulse again and see the error much easier
 
 <center>
-  {{< image "20190320_162433.jpg" "Resize" "325x" />}}
-  {{< image "20190320_162501.jpg" "Resize" "325x" />}}
+  {{< mosaic "1x1" "20190320_162433.jpg" "20190320_162501.jpg" >}}
 </center>
 
 At this point I was starting to lose confidence that my issue was actually step-loss or signal noise. The main reason I was doubting this was that the error was very replicatable. Every time I would run the program and I measured the error it had very little deviation.
@@ -41,6 +39,5 @@ At this point I was starting to lose confidence that my issue was actually step-
 My laser has the ability to rehome and then return to the relative origin. This can be used to clear backlash error inbetween program runs. I grouped up paths into about 8 separate runs and the results were pretty great.
 
 <center>
-  {{< image "ramsaycolor.png" "Resize" "325x" />}}
-  {{< image "20190403_002308.jpg" "Fill" "325x208" />}}
+  {{< mosaic "1x1" "ramsaycolor.png" "20190403_002308.jpg" >}}
 </center>

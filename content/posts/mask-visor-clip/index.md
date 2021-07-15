@@ -7,8 +7,7 @@ tags = ["3D Printing", "Fusion 360"]
 +++
 
 <center>
-  {{< image "20200811_054557.jpg" "Resize" "x202" />}}
-  {{< image "20200812_084416.jpg" "Resize" "325x" />}}
+  {{< mosaic "1x1" "20200811_054557.jpg" "20200812_084416.jpg" >}}
 </center>
 
 <center>

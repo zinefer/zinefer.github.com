@@ -19,8 +19,7 @@ I don't like how this only protects the switch in one direction and then you hav
 After doing some more looking around I ran across [rotary selector switches](https://www.galco.com/buy/IDEC/AS6M-2Y2P) - I've never seen these before! Combined with a finger guard this could be just what I am looking for.
 
 <center>
-  {{< image "rotary_guard.jpg" "Resize" "x325" />}}
-  {{< image "rotary.jpg" "Resize" "325x" />}}
+  {{< mosaic "1x1" "rotary_guard.jpg" "rotary.jpg" >}}
 </center>
 
 Unfortunately, these are not cheap switches. Now that I have some more keywords to search for I run across more switch technology that is new to me. This time, new guards for toggle switches. Apparently, [these ones](http://www.space1.com/Artifacts/Artifacts_FOR_SALE/FS-_Switch_Guard/fs-_switch_guard.html) specifically are reproductions from the [Space Shuttle](https://en.wikipedia.org/wiki/Space_Shuttle).
