@@ -6,7 +6,8 @@ CONTENT_PATH='content'
 
 function install {
     ./devops/scripts/install-hugo.sh
-    npm install --prefix themes/carbon
+    npm install
+}
 }
 
 function build {
