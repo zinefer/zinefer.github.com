@@ -8,7 +8,6 @@ function install {
     ./devops/scripts/install-hugo.sh
     npm install
 }
-}
 
 function build {
     hugo --minify
