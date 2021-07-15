@@ -11,9 +11,7 @@ I put together a robot that can draw on eggs over the weekend ...
 <center>{{< image "eggbot.jpg" Resize "700x" />}}</center>
 
 <center>
-  {{< image "decepticon.jpg" Fill "225x225 center" />}}
-  {{< image "swirl.jpg" Fill "225x225 center" />}}
-  {{< image "dino.jpg" Fill "225x225 center" />}}
+  {{< mosaic "1x1x1" "decepticon.jpg" "swirl.jpg" "dino.jpg" >}}
 </center>
 
 <center>

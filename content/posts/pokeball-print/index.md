@@ -3,7 +3,7 @@ date = "2018-10-07T20:25:32-06:00"
 title = "3D Printed Pokeball"
 description = "I printed a Pokeball!"
 categories = "Making"
-tags = ["3D Printing", "Pokeball"]
+tags = ["3D Printing", "Pokemon"]
 +++
 
 <center>
