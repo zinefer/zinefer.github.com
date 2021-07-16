@@ -15,5 +15,5 @@ I put together a robot that can draw on eggs over the weekend ...
 </center>
 
 <center>
-  {{< mosaic "1x1" "cookie.jpg" "sesamegang.jpg" >}}
+  {{< mosaic "1x1|x225" "cookie.jpg" "sesamegang.jpg" >}}
 </center>

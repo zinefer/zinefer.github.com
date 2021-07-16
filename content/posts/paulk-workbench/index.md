@@ -53,7 +53,7 @@ Most everyone I saw creating these benches were using the 20mm forstner and I ma
 It was a two blade variety and atleast for my CNC it just wasn't up to the job. It ended up getting extremely hot, smoking and burning the walls of the dogholes. I also looked into the bench dog offerings online and locally and determined I was better off using a 3/4" forstner.
 
 <center>
-  {{< mosaic "1x1" "20200530_171932e.jpg" "20200531_103814.jpg" >}}
+  {{< mosaic "1x1|x225" "20200530_171932e.jpg" "20200531_103814.jpg" >}}
 </center>
 
 I learned that there is another type of forstner that is better for use in routers. After few tests the holes were clean and the bit was running cool after multiple holes.
