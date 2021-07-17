@@ -25,8 +25,7 @@ One of the y-axis zip ties broke which is no big deal but the real issue was tha
 Thanks to a [friend](https://www.designikeda.com/) I had a new idler within a day or so. Unfortunately, after printing the test whistle some new damage had appeared on the lower left motor mount.
 
 <center>
-  {{< image "20200616_200836.jpg" "Resize" "325x" />}}
-  {{< image "20200616_203658.jpg" "Resize" "325x" />}}
+  {{< mosaic "1x1" "20200616_200836.jpg" "20200616_203658.jpg" >}}
 </center>
 
 And with a little clamp I was able to print my own new lower left motor mount. It was a bit tricky to figure out how to replace that mount as the entire x-axis had to come off.

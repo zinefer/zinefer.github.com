@@ -9,8 +9,7 @@ tags = ["Drones", "Electronics", "Soldering", "MartainII"]
 # The parts have arrived!
 
 <center>
-  {{< image "a.jpg" Fill "225x225 center" />}}
-  {{< image "b.jpg" Fill "225x225 center" />}}
+  {{< mosaic "1x1" "a.jpg" "b.jpg" >}}
 </center>
 
 # No workbench, No problem

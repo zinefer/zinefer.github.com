@@ -94,13 +94,11 @@ This might have been the easiest part of the entire project! Once all the prior 
 </center>
 
 <center>
-  {{< image "assem-inspect.png" "Resize" "325x" />}}
-  {{< image "assem.png" "Resize" "325x" />}}
+  {{< mosaic "1x1" "assem-inspect.png" "assem.png" >}}
 </center>
 
 <center>
-  {{< image "20210322_195809.jpg" "Resize" "325x" />}}
-  {{< image "20210227_093630.jpg" "Resize" "325x" />}}
+  {{< mosaic "1x1" "20210322_195809.jpg" "20210227_093630.jpg" >}}
 </center>
 
 Unfortunately it was about this point when the [Ikea Shortcut](https://www.ikea.com/ca/en/p/tradfri-shortcut-button-white-20356382/) button was released and did everything this project did better. With a slightly different form factor and battery, but Zigbee is better than wifi, it reports its battery usage, we can detect a long press, and it's somewhat water resistant. All this at a price that this project can't really beat. 

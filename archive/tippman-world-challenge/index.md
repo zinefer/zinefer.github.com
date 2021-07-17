@@ -10,8 +10,7 @@ tags = ["Paintball", "Camping"]
 </center>
 
 <center>
-  {{< image "IMG00344.jpg" Resize "325x" />}}
-  {{< image "IMG00345.jpg" Resize "325x" />}}
+  {{< mosaic "1x1" "IMG00344.jpg" "IMG00345.jpg" >}}
 </center>
 
 <center>
@@ -19,16 +18,13 @@ tags = ["Paintball", "Camping"]
 </center>
 
 <center>
-  {{< image "IMG00351.jpg" Resize "225x" />}}
-  {{< image "IMG00354.jpg" Resize "225x" />}}
-  {{< image "IMG00355.jpg" Resize "225x" />}}
+  {{< mosaic "1x1x1" "IMG00351.jpg" "IMG00354.jpg" "IMG00355.jpg" >}}
 </center>
 
 There was a cease fire because bees got under a some masks and they took them off.
 
 <center>
-  {{< image "IMG00346.jpg" Resize "325x" />}}
-  {{< image "IMG00347.jpg" Resize "325x" />}}
+  {{< mosaic "1x1" "IMG00346.jpg" "IMG00347.jpg" >}}
 </center>
 
 <center>
@@ -36,8 +32,7 @@ There was a cease fire because bees got under a some masks and they took them of
 </center>
 
 <center>
-  {{< image "IMG00356.jpg" Resize "325x" />}}
-  {{< image "IMG00357.jpg" Resize "325x" />}}
+  {{< mosaic "1x1" "IMG00356.jpg" "IMG00357.jpg" >}}
 </center>
 
 <center>

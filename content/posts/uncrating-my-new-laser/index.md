@@ -23,7 +23,5 @@ tags = ["Laser Cutting", "New Equipment"]
 </center>
 
 <center>
-  {{< image "20190304_184901.jpg" "Resize" "225x" />}}
-  {{< image "20190304_205330.jpg" "Resize" "225x" />}}
-  {{< image "20190305_211516.jpg" "Resize" "225x" />}}
+  {{< mosaic "1x1x1" "20190304_184901.jpg" "20190304_205330.jpg" "20190305_211516.jpg" >}}
 </center>

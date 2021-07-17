@@ -9,8 +9,7 @@ tags = ["3D Printing", "Fusion 360", "Desk Lift"]
 I iterated on this for quite a while. Here are some highlights.
 
 <center>
-  {{< image "20180911_153919.jpg" "Fill" "325x236" />}}
-  {{< image "one.png" "Resize" "325x" />}}
+  {{< mosaic "1x1" "20180911_153919.jpg" "one.png" >}}
 </center>
 
 <center>
@@ -18,8 +17,7 @@ I iterated on this for quite a while. Here are some highlights.
 </center>
 
 <center>
-  {{< image "three.png" "Resize" "325x" />}}
-  {{< image "20180922_144653.jpg" "Fill" "325x265" />}}
+  {{< mosaic "1x1" "three.png" "20180922_144653.jpg" >}}
 </center>
 
 <center>

@@ -9,9 +9,7 @@ tags = ["Arduino", "Laser Cutting", "Soldering", "APA102"]
 # Prototyping the Baton Endcap
 
 <center>
-  {{< image "20190617_223630.jpg" "Resize" "225x" />}}
-  {{< image "20190618_002331.jpg" "Resize" "225x" />}}
-  {{< image "20190618_163932.jpg" "Resize" "225x" />}}
+  {{< mosaic "1x1x1" "20190617_223630.jpg" "20190618_002331.jpg" "20190618_163932.jpg" >}}
 </center>
 
 <center>

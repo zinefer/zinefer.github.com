@@ -9,9 +9,7 @@ tags = ["CAD", "Arcade", "Solidworks", "MAME", "Retro"]
 A few years ago I moved to Colorado to work at SparkFun and postponed a project I had been working on: Building a full size MAME arcade cabinet. A couple of months ago I decided I was going to pick the project back up and plan it so that I could work on it with my dad during my 4th of July vacation. I wanted to use his motorcycle as design inspiration for the cabinet.
 
 <center>
-	{{< image "wideglide1.jpg" Resize "225x" />}}
-	{{< image "wideglide-tank.jpg" Resize "225x" />}}
-	{{< image "wideglide2.jpg" Resize "225x" />}}
+	{{< mosaic "1x1x1" "wideglide1.jpg" "wideglide-tank.jpg" "wideglide2.jpg" >}}
 </center>
 
 When starting a large project such as this one, I always spend tons of time reading everything I can come across related to the topic at hand. However, for the most part I kept coming back to just a few resources during the design process:
@@ -51,9 +49,7 @@ Pretty simple, just going to use [Retropie](http://blog.petrockblock.com/retropi
 I don't consider myself the best designer but I have spent a lot of time on this and gotten input from many talented people. For the graphics I will have vinyls professionally made. I don't want any of my graphics to contain black. I hope to spray paint all black on the cabinet (I have had good success at making spray paint look like a powder coat in the past) and the graphics will be laid on top of that. Red T-molding will be purchased from [t-molding.com](http://www.t-molding.com/).
 
 <center>
-	{{< image "glamrender11.jpg" Resize "225x" />}}
-	{{< image "glamrender21.jpg" Resize "225x" />}}
-	{{< image "glamrender31.jpg" Resize "225x" />}}
+	{{< mosaic "1x1x1" "glamrender11.jpg" "glamrender21.jpg" "glamrender31.jpg" >}}
 </center>
 
 What do you think? Do you have any recommendations on how I can improve the cabinet before I start the build?

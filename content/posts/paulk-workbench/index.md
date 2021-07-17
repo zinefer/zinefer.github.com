@@ -33,8 +33,7 @@ I suggest thorougly marking every piece and cut you can think of with pencil. Ma
 ## [Kreg Accu-cut](https://www.amazon.com/Kreg-KMA2700-Circular-Saw-Track/dp/B073PGP96S) and [Kreg Rip Cut](https://www.amazon.com/KREG-KMA2675-Kreg-Rip-Cut/dp/B007K5HIFS)
 
 <center>
-  {{< image "accucut.jpg" "Resize" "x215" />}}
-  {{< image "ripcut.jpg" "Resize" "325x" />}}
+  {{< mosaic "1x1" "accucut.jpg" "ripcut.jpg" >}}
 </center>
 
 I could have levereged the router more but using the circular saw saved some material. I also really liked using these and I wanted atleast a track saw to make good use of the dogholes on this bench anyway. I ended up really liking them. I have never used the festool or dewalt but these made very repeatable cuts.
@@ -54,8 +53,7 @@ Most everyone I saw creating these benches were using the 20mm forstner and I ma
 It was a two blade variety and atleast for my CNC it just wasn't up to the job. It ended up getting extremely hot, smoking and burning the walls of the dogholes. I also looked into the bench dog offerings online and locally and determined I was better off using a 3/4" forstner.
 
 <center>
-  {{< image "20200530_171932e.jpg" "Fill" "325x244" />}}
-  {{< image "20200531_103814.jpg" "Resize" "325x" />}}
+  {{< mosaic "1x1|x225" "20200530_171932e.jpg" "20200531_103814.jpg" >}}
 </center>
 
 I learned that there is another type of forstner that is better for use in routers. After few tests the holes were clean and the bit was running cool after multiple holes.

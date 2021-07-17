@@ -10,10 +10,8 @@ tags = ["3D Printing", "Fusion 360", "Organization"]
   {{< mosaic "2x1" "1x1.png" "2x1-a.png" "2x1-b.png" >}}
 </center>
 
-
 <center>
-  {{< image "20210118_215114.jpg" "Resize" "325x" />}}
-  {{< image "thumb.jpg" "Resize" "325x" />}}
+  {{< mosaic "1x1" "20210118_215114.jpg" "thumb.jpg" >}}
 </center>
 
 These Stackable assortment bins were inspired by [Alexandre Chappel's](https://www.youtube.com/watch?v=CHFK5sY8ToE) design as well as a [thingiverse remix](https://www.thingiverse.com/thing:4681582). The thingiverse remix did not behave when changing parameters around so I reworked it from scratch.

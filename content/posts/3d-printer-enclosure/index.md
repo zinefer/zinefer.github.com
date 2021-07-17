@@ -7,8 +7,7 @@ tags = ["3D Printing"]
 +++
 
 <center>
-  {{< image "20181001_232201.jpg" "Fill" "325x233" />}}
-  {{< image "brackets.png" "Resize" "325x" />}}
+  {{< mosaic "1x1" "20181001_232201.jpg" "brackets.png" >}}
 </center>
 
 <center>

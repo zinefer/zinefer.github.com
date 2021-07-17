@@ -21,15 +21,11 @@ Printed parts from [Triffid_Hunter](http://create3d.com.au/)
 </center>
 
 <center>
-  {{< image "extruder/2012-03-30-22.03.40.jpg" Resize "225x" />}}
-  {{< image "extruder/2012-03-30-22.01.24.jpg" Resize "225x" />}}
-  {{< image "extruder/2012-03-31-14.05.24.jpg" Resize "225x" />}}
+  {{< mosaic "1x1x1" "extruder/2012-03-30-22.03.40.jpg" "extruder/2012-03-30-22.01.24.jpg" "extruder/2012-03-31-14.05.24.jpg" >}}
 </center>
 
 <center>
-  {{< image "extruder/2012-03-31-14.06.47.jpg" Resize "225x" />}}
-  {{< image "extruder/2012-03-31-14.08.12.jpg" Resize "225x" />}}
-  {{< image "extruder/2012-03-31-14.11.40.jpg" Resize "225x" />}}
+  {{< mosaic "1x1x1" "extruder/2012-03-31-14.06.47.jpg" "extruder/2012-03-31-14.08.12.jpg" "extruder/2012-03-31-14.11.40.jpg" >}}
 </center>
 
 <center>

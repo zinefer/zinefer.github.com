@@ -19,8 +19,7 @@ I tried using the illustrator pathfinder but it cannot clip a collection of uncl
 The solution was actually to bring the artwork over to inkscape and use an extension called [Pathops](https://gitlab.com/moini_ink/inx-pathops/). It allowed me to cut my collection of objects with a single shape. I chose to extend the engraving past the edge of the cut slightly to minimize chip out but it didn't save me from all of it.
 
 <center>
-  {{< image "a-half.png" "Resize" "325x" />}}
-  {{< image "a-3d.png" "Resize" "325x" />}}
+  {{< mosaic "1x1" "a-half.png" "a-3d.png" >}}
 </center>
 
 Once I had some files that I knew could work I needed to experiment with the epoxy as I've never used it before. For this project I ended up using a [Deep pour by Craft Resin](https://www.amazon.com/gp/product/B07YCVVYFK/) for the candied inlay and then a [Thin pour by MAS](https://www.amazon.com/gp/product/B07CZR9BLW/) for the clear coat.
@@ -60,8 +59,7 @@ Fortunately, I was able to sand the resin down with minimal damage to the finish
 Unfortunately, this left the top very not flat and it took a marathon of wet sanding to fix. My poor workbench! ;) 
 
 <center>
-  {{< image "20201107_051258.jpg" "Resize" "325x" />}}
-  {{< image "20201116_224737.jpg" "Resize" "325x" />}}
+  {{< mosaic "1x1" "20201107_051258.jpg" "20201116_224737.jpg" >}}
 </center>
 
 For this project I have a new workshop mark! I lasered it onto the back of the tables and used brown shoe polish to increase the contrast. I also coated the sides and back with a glossy spray on polyurethane. Multiple coats with sanding in between. This project was mostly sanding.

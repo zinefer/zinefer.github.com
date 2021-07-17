@@ -9,8 +9,7 @@ tags = ["R/C", "Laser Cutting"]
 I used [makercase](https://en.makercase.com/) to whip up a quick 6"x6"x6" box with a 1" tall lid with the laser cutter.
 
 <center>
-  {{< image "box.png" "Fit" "300x225 center" />}}
-  {{< image "lid.png" "Fill" "300x225" />}}
+  {{< mosaic "1x1" "box.png" "lid.png" >}}
 </center>
 
 I used a Dune Tracker from Walmart as the base but in hindsight this thing was pretty awful to control.
