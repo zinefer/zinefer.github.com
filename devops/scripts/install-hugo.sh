@@ -2,6 +2,14 @@
 
 set -e
 
+if ! command -v jq &> /dev/null
+then
+    echo "jq could not be found, installing"
+    # Reinvoke this script with sudo if necessary
+    [[ $(id -u) -eq 0 ]] || exec sudo /bin/bash -c "$(printf '%q ' "$BASH_SOURCE" "$@")"
+    sudo apt install -y jq
+fi
+
 VFILE=".hugoversion"
 VERSION=$(cat $VFILE)
 
