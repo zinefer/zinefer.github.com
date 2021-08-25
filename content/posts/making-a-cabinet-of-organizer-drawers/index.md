@@ -57,7 +57,7 @@ I had big plans to use brad nails and no clamps during glueing but it never seem
 </center>
 
 <center>
-  {{< image "20210814_200050.jpg" "Resize" "700x" />}}
+  {{< image "thumb.jpg" "Resize" "700x" />}}
 </center>
 
 <center>
