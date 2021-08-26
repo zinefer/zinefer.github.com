@@ -1,6 +1,6 @@
 +++
 date = "2021-08-24T21:35:34-06:00"
-title = "Making a Cabinet of Organizer Drawers"
+title = "a Cabinet of Organizer Drawers"
 description = "It's a long road to getting a well organized shop but a nice set of drawers goes far"
 categories = "Making"
 tags = ["CNC Routing", "Fusion 360", "Furniture", "Organization"]
