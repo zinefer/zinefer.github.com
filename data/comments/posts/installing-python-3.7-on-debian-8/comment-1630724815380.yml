@@ -1,0 +1,21 @@
+_id: 28a78780-0d2d-11ec-9d02-f32e540774bf
+_parent: installing-python-3.7-on-debian-8
+reply_to: ''
+captcha: ''
+name: Alex Burachynsky
+email: 78f53081a5946c21f5c988367451f1db
+body: >-
+  My OrangePi A64 win+ computer is still processing.... it would not allow me to
+  upgrade python from 3.5.2 and I need 3.6 or better to run numpy and
+  matplotlib. I hope this works cuz nothing else will/would so far. I need  to
+  plot pressure readings from 4 BMP280 chips attached to a 4 cylinder motorcycle
+  engines for tuning. I'm gonna make a nice box for the processor and
+  multiplexer. 3D printed the BMP280 chip housings which attach to the carbs. I
+  have a working prototype using a RPi 4. Uses ic2 and a multiplexer. Using
+  python to plot the pressures for each cylinder in sequence as I manually tune
+  the carbs. Many thanks for your efforts regarding the software. Great to know
+  some decent people still exist. I'll let you know if it worked out for me.
+  Otherwise I'll junk the orange Pi and get another RPi 4. I had the Orange Pi
+  sitting in a drawer for 4 years doing nothing, bought it for $35, A RPi 4 cost
+  over $150 now. So that's why I thought i'd try and use it.
+date: '2021-09-04T03:06:55.378Z'
