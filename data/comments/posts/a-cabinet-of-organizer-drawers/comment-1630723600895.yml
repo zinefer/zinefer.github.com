@@ -1,0 +1,8 @@
+_id: 54cfe120-0d2a-11ec-9d02-f32e540774bf
+_parent: a-cabinet-of-organizer-drawers
+reply_to: ''
+captcha: ''
+name: Alex Burachynsky
+email: 78f53081a5946c21f5c988367451f1db
+body: "Very nice workmanship in your drawer cabinet. The hand pulls are very neat looking. \r\nI visited your site because I could not update my python version on jessie 8 to upgrade so I could use numpy or matplot for my project.  Its still processing....\r\nIf it ends up working I must thank you alot. I'm not a software genius like you but I do have some skills. Been a mechanical engineer for 40 years and I love motorcycle engines, wind turbines and well just about anything that takes some thought and skilled hands. Send me an email.\r\n My project involves using 4 BMP280 pressure sensors to tune the carburettors on my restored bikes. I use i2c via a multiplexer to read vacuum from each carb so I can tune them properly. First one worked fine now I want to make a better version and my cheap orangePi A64 computer wouldn't allow me to upgrade python to use matplotlib graphing functions. Alex"
+date: '2021-09-04T02:46:40.891Z'
