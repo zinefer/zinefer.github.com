@@ -136,7 +136,7 @@ Click it and search for the `import-dxf` ULP. Select it and click `OK`.
 Here you will select your DXF file and scaling options.
 
 <center>
-  {{< image "ulp.png" "Resize" "700x" />}}
+  {{< image "ulp-settings.png" "Resize" "700x" />}}
 </center>
 
 After clicking `OK`, a new window will appear with a script that has been generated. Click `Run`.
