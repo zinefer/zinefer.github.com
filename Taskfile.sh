@@ -73,6 +73,7 @@ function regression {
 }
 
 function deploy {
+    set -e
     STORAGE_ACCOUNT=${1?}
     DEST="https://$STORAGE_ACCOUNT.blob.core.windows.net/\$web"
     RESOURCE_GROUP=`az storage account show -n $STORAGE_ACCOUNT | jq -r .resourceGroup`
