@@ -6,7 +6,7 @@ categories = "Making"
 tags = ["ESP32", "APA102", "Fusion 360", "Soldering", "Prototyping", "PCB Design", "Electronics", "3D Printing", "C++"]
 +++
 
-Earlier this year with EDC 2021 getting scheduled, I decided I wanted to take a stab at creating a new totem with a bunch of the accidental features I loved from my [cobbled together in 24-hours version from 2019]().
+Earlier this year with EDC 2021 getting scheduled, I decided I wanted to take a stab at creating a new totem with a bunch of the accidental features I loved from my [cobbled together in 24-hours version from 2019]({{< ref "/posts/2019-festival-totem" >}}).
 
 - Highly compliant for maximum wiggles
 - Rattles for audio/haptic stimulus
@@ -98,11 +98,11 @@ It only took a couple tries with a bit of tweaking before we had a great result.
 
 # Custom PCBs
 
-I decided I wanted this project to finally be the one where I create custom boards and have a fabshop create them for me.
+I decided I wanted this project to finally be the one where I create design boards and have a fabshop create them for me.
 
 <center>{{< image "controller-four.png" Resize "700x" />}}</center>
 
-The controller board has a level-shifter to be able to communicate with the APA102s as well as a [BNO055 Position sensor]().
+The controller board has a level-shifter to be able to communicate with the APA102s as well as a [BNO055 Position sensor](https://learn.adafruit.com/adafruit-bno055-absolute-orientation-sensor).
 
 I also created an input board that has a parallel-shift-in to read from 3 position slide switches.
 
