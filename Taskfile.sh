@@ -115,6 +115,20 @@ function compress-videos {
     done
 }
 
+function compress-pictures {
+    NAME=${1?}
+
+    if [ -d "${CONTENT_PATH}/posts/${NAME}" ]; then
+        VPATH="${CONTENT_PATH}/posts/${NAME}"
+    elif [ -d "${CONTENT_PATH}/projects/${NAME}" ]; then
+        VPATH="${CONTENT_PATH}/projects/${NAME}"
+    fi
+
+    for i in $VPATH/*.{jpg,jpeg}; do 
+        jpegoptim -m 80 "$i"
+    done
+}
+
 function remove-extras {
     NAME=${1?}
     IGNORED="index.md thumb.jpg thumb.png"
