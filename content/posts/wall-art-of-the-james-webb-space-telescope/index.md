@@ -19,7 +19,6 @@ We've decided to open source this design but if you would like to support our co
 <form action="https://www.paypal.com/donate" method="post" target="_top">
     <input type="hidden" name="hosted_button_id" value="PKNNU7EPND938" />
     <input type="image" class="notouch" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with paypal button" />
-    <img alt="" border="0" src="https://paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
 </form>
 
 Download: [Fusion360](james-webb-v4.f3d) - [STL](james-webb-wall-art.stl)
