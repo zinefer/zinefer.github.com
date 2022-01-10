@@ -21,6 +21,6 @@ We've decided to open source this design but if you would like to support our co
     <input type="image" class="notouch" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with paypal button" />
 </form>
 
-Download: [Fusion360](james-webb-v4.f3d) - [STL](james-webb-wall-art.stl)
+Download: [Fusion360](james-webb-v4.f3d) - [STL](james-webb-space-art.stl)
 
 The fusion 360 file is fairly parametric and you should be able to customize it to almost any size.
