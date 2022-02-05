@@ -1,4 +1,4 @@
-# My personal website
+# My personal websitegit@github.com:zinefer/zinefer.github.com.git
 
 ## Install notes
 
