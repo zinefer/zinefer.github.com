@@ -50,7 +50,6 @@ jobs:
         echo "::set-output name=new::$NEW"
         echo "::set-output name=old::$OLD"
         echo "$OLD == $NEW"
-
 ```
 _We `wget` the `.hugoversion` here to save a little time in the case that there is no new version instead of cloning the whole repository._ 
 
