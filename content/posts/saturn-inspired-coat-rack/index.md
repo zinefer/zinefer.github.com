@@ -3,7 +3,7 @@ date = "2021-01-06T10:03:11-07:00"
 title = "Saturn inspired coat rack"
 description = "Blythe and I made a new coat rack"
 categories = "Making"
-tags = ["CNC Routing", "Furniture"]
+tags = ["CNC Routing", "Furniture", "Art"]
 +++
 
 <center>
