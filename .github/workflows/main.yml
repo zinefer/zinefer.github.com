@@ -1,9 +1,16 @@
 name: Build & Publish
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - master
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 
 jobs:
   Build-and-Publish:
@@ -32,7 +39,7 @@ jobs:
       run: ./Taskfile.sh build
 
     - name: Upload artifact
-      uses: actions/upload-pages-artifact@v1
+      uses: actions/upload-pages-artifact@v3
       with:
         path: ./public
 
