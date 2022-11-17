@@ -1,6 +1,6 @@
 name: Build & Publish
 
-on: 
+on:
   push:
     branches:
       - master
@@ -21,11 +21,20 @@ jobs:
         ref: resources
         path: resources
 
+    - name: Setup Pages
+      id: pages
+      uses: actions/configure-pages@v2
+
     - name: Install dependencies
       run: ./Taskfile.sh install
-    
+
     - name: Build content
       run: ./Taskfile.sh build
+
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@v1
+      with:
+        path: ./public
 
     - name: Commit resources cache
       uses: EndBug/add-and-commit@v4
@@ -35,19 +44,17 @@ jobs:
         ref: resources
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    
+
     - name: Remove .git directory
       run: rm -rf public/.git
-
-    - name: Install azcopy
-      uses: zinefer/install-azcopy-action@v1
-      with:
-        version: v10
-        creds: ${{ secrets.AZURE_RBAC_CREDENTIALS }}
 
     - uses: azure/login@v1
       with:
         creds: ${{ secrets.AZURE_RBAC_CREDENTIALS }}
-    
+
     - name: Publish content
       run: ./Taskfile.sh deploy ${{ secrets.AZURE_STORAGE_ACCOUNT_NAME }}
+
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v1
